@@ -1,6 +1,8 @@
 require_relative ('../models/member')
 require_relative ('../models/gym_class')
 
+require ('pry')
+
 member1 = Member.new({
   'name' => 'Shane Forster',
   'age' => '28',
@@ -25,3 +27,6 @@ member3 = Member.new({
 member1.save()
 member2.save()
 member3.save()
+
+Binding.pry
+nil
