@@ -1,4 +1,4 @@
-DROP TABLE members_gym_classes;
+DROP TABLE bookings;
 DROP TABLE gym_classes;
 DROP TABLE members;
 
@@ -18,7 +18,7 @@ CREATE TABLE gym_classes (
   time TIME
 );
 
-CREATE TABLE members_gym_classes (
+CREATE TABLE bookings (
   id SERIAL primary key,
   member_id INT,
   gym_class_id INT
