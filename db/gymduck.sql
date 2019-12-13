@@ -14,8 +14,8 @@ CREATE TABLE gym_classes (
   id SERIAL primary key,
   name VARCHAR(255),
   class_type VARCHAR(255),
-  date DATE,
-  time TIME
+  class_date VARCHAR(255),
+  class_time VARCHAR(255)
 );
 
 CREATE TABLE bookings (

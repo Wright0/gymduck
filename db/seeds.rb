@@ -1,7 +1,6 @@
 require_relative ('../models/member')
 require_relative ('../models/gym_class')
 
-
 require ('pry')
 
 member1 = Member.new({
@@ -25,6 +24,17 @@ member3 = Member.new({
 member1.save()
 member2.save()
 member3.save()
+
+gym_class1 = Gym_class.new({
+  'name' => 'Pilates',
+  'class_type' => 'premium',
+  'class_date' => 'Tuesday',
+  'class_time' => '20:00'
+  })
+
+gym_class1.save()
+
+
 
 
 binding.pry
