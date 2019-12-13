@@ -2,6 +2,9 @@ require_relative('../db/sql_runner')
 
 class Member
 
+  attr_accessor :name, :age, :membership_type, :status
+  attr_reader :id
+
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
@@ -10,7 +13,7 @@ class Member
     @status = options['status']
   end
 
-  def save()
+  def save() #Create
     sql = "INSERT INTO members
     (
       name,
@@ -29,17 +32,33 @@ class Member
     @id = id.to_i
   end
 
-  def self.all()
+  def self.all() #Read
     sql = "SELECT * FROM members"
     member_data = SqlRunner.run(sql)
     members = map_members(member_data)
     return members
   end
 
+  def update() #Update
+    sql = "UPDATE members
+    SET
+    (
+      name,
+      age,
+      membership_type,
+      status
+    ) =
+    (
+      $1, $2, $3, $4
+    ) WHERE id = $5"
+    values = [@name, @age, @membership_type, @status, @id]
+    SqlRunner.run(sql, values)
+  end
 
-def self.map_members(member_data)
-  return member_data.map{ |member| Member.new(member)}
 
-end
+
+  def self.map_members(member_data)
+    return member_data.map{ |member| Member.new(member)}
+  end
 
 end
