@@ -33,7 +33,15 @@ lesson1 = Lesson.new({
   'lesson_time' => '20:00'
   })
 
+lesson2 = Lesson.new({
+  'name' => 'Yoga',
+  'lesson_type' => 'basic',
+  'lesson_date' => 'Wednesday',
+  'lesson_time' => '18:00'
+  })
+
 lesson1.save()
+lesson2.save()
 
 
 booking1 = Booking.new({
@@ -41,7 +49,19 @@ booking1 = Booking.new({
   'lesson_id' => lesson1.id
   })
 
+booking2 = Booking.new({
+  'member_id' => member2.id,
+  'lesson_id' => lesson2.id
+  })
+
+booking3 = Booking.new({
+  'member_id' => member1.id,
+  'lesson_id' => lesson2.id
+  })
+
 booking1.save
+booking2.save
+booking3.save
 
 
 binding.pry
