@@ -39,6 +39,22 @@ class GymClass
     return gym_classes
   end
 
+  def update() #UPDATE
+    sql = "UPDATE gym_classes
+    SET
+    (
+      name,
+      class_type,
+      class_date,
+      class_time
+    )  =
+    (
+      $1, $2, $3, $4
+    )WHERE id = $5"
+    values = [@name, @class_type, @class_date, @class_time, @id]
+    SqlRunner.run(sql, values)
+  end
+
 
   # Helper method
   def self.map_classes(class_data)
