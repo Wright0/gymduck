@@ -1,5 +1,23 @@
+body{
+background-color: green;
+}
+
 ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+}
+
+li {
+  background-color: black;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+main {
+  padding:10px 200px;
 }
