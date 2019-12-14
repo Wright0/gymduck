@@ -28,9 +28,9 @@ member3.save()
 
 lesson1 = Lesson.new({
   'name' => 'Pilates',
-  'class_type' => 'premium',
-  'class_date' => 'Tuesday',
-  'class_time' => '20:00'
+  'lesson_type' => 'premium',
+  'lesson_date' => 'Tuesday',
+  'lesson_time' => '20:00'
   })
 
 lesson1.save()

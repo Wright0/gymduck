@@ -61,14 +61,14 @@ class Member
   end
 
 
-  # def lessons() #returns the classes a specific member is signed up for
-  #   sql ="SELECT * FROM lessons
-  #   INNER JOIN bookings ON bookings.lesson_id = lesson.id
-  #   WHERE bookings.member_id = $1"
-  #   values = [@id]
-  #   results = SqlRunner.run(sql, values)
-  #   return Lessons.map_lessons(results)
-  # end
+  def lessons() #returns the classes a specific member is signed up for
+    sql =" SELECT l.* FROM lessons l
+    INNER JOIN bookings b ON b.lesson_id = l.id
+    WHERE b.member_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return Lesson.map_lessons(results)
+  end
 
 
 

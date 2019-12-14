@@ -62,10 +62,13 @@ class Lesson
   end
 
   def members() #returns the members taking a specific class
-
-
+    sql ="SELECT m.* FROM members m
+    INNER JOIN bookings b ON b.member_id = m.id
+    WHERE b.lesson_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return Member.map_members(results)
   end
-
 
   # Helper method
   def self.map_lessons(lesson_data)
