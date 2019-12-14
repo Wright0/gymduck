@@ -26,4 +26,6 @@ class Booking
     @id = id.to_i
   end
 
+  
+
 end
