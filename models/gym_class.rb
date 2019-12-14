@@ -1,6 +1,6 @@
 require_relative('../db/sql_runner')
 
-class Gym_class
+class GymClass
 
   attr_accessor :name, :class_type, :class_date, :class_time
   attr_reader :id
@@ -32,4 +32,16 @@ class Gym_class
     @id = id.to_i
   end
 
+  def self.all() #Read
+    sql = "SELECT * FROM gym_classes"
+    class_data = SqlRunner.run(sql)
+    gym_classes = map_classes(class_data)
+    return gym_classes
+  end
+
+
+  # Helper method
+  def self.map_classes(class_data)
+    return class_data.map{ |gym_class| GymClass.new(gym_class)}
+  end
 end

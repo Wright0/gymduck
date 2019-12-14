@@ -25,7 +25,7 @@ member1.save()
 member2.save()
 member3.save()
 
-gym_class1 = Gym_class.new({
+gym_class1 = GymClass.new({
   'name' => 'Pilates',
   'class_type' => 'premium',
   'class_date' => 'Tuesday',
