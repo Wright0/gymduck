@@ -60,8 +60,19 @@ class Member
     SqlRunner.run(sql)
   end
 
-# Helper methods
 
+  # def lessons() #returns the classes a specific member is signed up for
+  #   sql ="SELECT * FROM lessons
+  #   INNER JOIN bookings ON bookings.lesson_id = lesson.id
+  #   WHERE bookings.member_id = $1"
+  #   values = [@id]
+  #   results = SqlRunner.run(sql, values)
+  #   return Lessons.map_lessons(results)
+  # end
+
+
+
+# Helper methods
   def self.map_members(member_data)
     return member_data.map{ |member| Member.new(member)}
   end

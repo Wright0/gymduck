@@ -1,5 +1,5 @@
 require_relative ('../models/member')
-require_relative ('../models/gym_class')
+require_relative ('../models/lesson')
 require_relative ('../models/booking')
 
 require ('pry')
@@ -26,19 +26,19 @@ member1.save()
 member2.save()
 member3.save()
 
-gym_class1 = GymClass.new({
+lesson1 = Lesson.new({
   'name' => 'Pilates',
   'class_type' => 'premium',
   'class_date' => 'Tuesday',
   'class_time' => '20:00'
   })
 
-gym_class1.save()
+lesson1.save()
 
 
 booking1 = Booking.new({
   'member_id' => member1.id,
-  'gym_class_id' => gym_class1.id
+  'lesson_id' => lesson1.id
   })
 
 booking1.save
