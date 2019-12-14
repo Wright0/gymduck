@@ -13,7 +13,7 @@ class GymClass
     @class_time = options['class_time']
   end
 
-  def save() #Create
+  def save() #CREATE
     sql = "INSERT INTO gym_classes
     (
       name,
@@ -32,7 +32,7 @@ class GymClass
     @id = id.to_i
   end
 
-  def self.all() #Read
+  def self.all() #READ
     sql = "SELECT * FROM gym_classes"
     class_data = SqlRunner.run(sql)
     gym_classes = map_classes(class_data)
@@ -52,6 +52,12 @@ class GymClass
       $1, $2, $3, $4
     )WHERE id = $5"
     values = [@name, @class_type, @class_date, @class_time, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete() #DELETE
+    sql = "DELETE FROM gym_classes WHERE id = $1"
+    values = [@id]
     SqlRunner.run(sql, values)
   end
 

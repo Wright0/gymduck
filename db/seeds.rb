@@ -1,5 +1,6 @@
 require_relative ('../models/member')
 require_relative ('../models/gym_class')
+require_relative ('../models/booking')
 
 require ('pry')
 
@@ -33,6 +34,14 @@ gym_class1 = GymClass.new({
   })
 
 gym_class1.save()
+
+
+booking1 = Booking.new({
+  'member_id' => member1.id,
+  'gym_class_id' => gym_class1.id
+  })
+
+booking1.save
 
 
 
