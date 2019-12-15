@@ -39,6 +39,13 @@ class Member
     return members
   end
 
+  def self.find_by_id(id)
+    sql = "SELECT * FROM members WHERE id = $1"
+    values = [id]
+    member_data = SqlRunner.run(sql, values).first
+    return Member.new(member_data)
+  end
+
   def update() #Update
     sql = "UPDATE members
     SET
