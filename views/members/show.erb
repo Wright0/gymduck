@@ -1,5 +1,23 @@
 <main>
   <h1>Profile page</h1>
-    <p><%= @member.name %>, <%= @member.age %></p>
 
+  <div class="member_profile">
+
+    <div>
+      <img src="/images/default-member-icon.png" alt="Member photo icon">
+    </div>
+
+    <div>
+      <p>Name: <%= @member.name %></p>
+      <p>Age: <%= @member.age %></p>
+      <p>Membership Type: <%= @member.membership_type %></p>
+      <p>Membership Status: <%= @member.membership_status %></p>
+    </div>
+
+    <div>
+      <form  method="POST" action="/members/<%= @member.id %>/deactivate">
+      <input type="submit" value="deactivate member">
+    </div>
+
+  </div>
 </main>

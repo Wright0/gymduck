@@ -12,3 +12,9 @@ get '/members/:id' do # show member profile
   @member = Member.find_by_id(params[:id])
   erb(:"members/show")
 end
+
+post '/members/:id/deactivate' do
+  member = Member.find_by_id(params[:id])
+  member.deactivate
+  redirect to '/members'
+end
