@@ -15,7 +15,9 @@
     </div>
 
     <div>
-      <form  method="POST" action="/members/<%= @member.id %>/deactivate">
+
+      <a href="/members/<%= @member.id %>/edit">Edit Member</a>
+      <form  method="POST" action="/members/<%= @member.id %>/change-status">
       <input type="submit" value="Change member status">
     </div>
 
