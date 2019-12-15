@@ -1,0 +1,25 @@
+<main>
+  <h1>All Members</h1>
+  <div>
+    <table class="memberlist">
+      <tr>
+        <th>First name</th>
+        <th>Age</th>
+        <th>Membership Type</th>
+        <th>Membership Status</th>
+        <th></th>
+      </tr>
+      <% @members.each do | member | %>
+      <tr>
+        <td><%= member.name %></td>
+        <td><%= member.age %></td>
+        <td><%= member.membership_type %></td>
+        <td><%= member.membership_status %></td>
+        <td><a href="/members/<%= member.id %>">Member profile</a></td>
+      </tr>
+      <% end %>
+    </table>
+
+  </div>
+
+</main>

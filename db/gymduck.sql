@@ -15,7 +15,7 @@ CREATE TABLE members (
   name VARCHAR(225),
   age int,
   membership_type VARCHAR(255),
-  status VARCHAR(255)
+  membership_status VARCHAR(255)
 );
 
 CREATE TABLE bookings (

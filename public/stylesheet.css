@@ -36,3 +36,21 @@ li a {
   text-decoration: none;
   color: white;
 }
+
+table.memberlist {
+  border: solid 5px orange;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  color: green;
+  background-color: #CAD8DB;
+}
+
+table.memberlist th {
+  border: solid 2px green;
+  padding: 10px;
+}
+
+table.memberlist td {
+  border: solid 2px green;
+  padding: 10px;
+}

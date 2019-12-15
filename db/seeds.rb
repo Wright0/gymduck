@@ -8,23 +8,44 @@ member1 = Member.new({
   'name' => 'Shane Forster',
   'age' => '28',
   'membership_type' => 'premium',
-  'status' => 'active'})
+  'membership_status' => 'active'})
 
 member2 = Member.new({
   'name' => 'Olivia Wright',
   'age' => '27',
   'membership_type' => 'basic',
-  'status' => 'active'})
+  'membership_status' => 'active'})
 
 member3 = Member.new({
   'name' => 'Tiffany Forster',
   'age' => '34',
   'membership_type' => 'basic',
-  'status' => 'inactive'})
+  'membership_status' => 'inactive'})
+
+member4 = Member.new({
+'name' => 'Cody Forster',
+'age' => '30',
+'membership_type' => 'premium',
+'membership_status' => 'active'})
+
+member5 = Member.new({
+'name' => 'Kate Forster',
+'age' => '29',
+'membership_type' => 'premium',
+'membership_status' => 'active'})
+
+member6 = Member.new({
+'name' => 'Josh Forster',
+'age' => '23',
+'membership_type' => 'basic',
+'membership_status' => 'active'})
 
 member1.save()
 member2.save()
 member3.save()
+member4.save()
+member5.save()
+member6.save()
 
 lesson1 = Lesson.new({
   'name' => 'Pilates',
