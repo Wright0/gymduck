@@ -15,6 +15,6 @@ end
 
 post '/members/:id/deactivate' do
   member = Member.find_by_id(params[:id])
-  member.deactivate
+  member.set_membership_status
   redirect to '/members'
 end

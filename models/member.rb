@@ -77,9 +77,11 @@ class Member
     return Lesson.map_lessons(results)
   end
 
-  def deactivate
+  def set_membership_status
     if membership_status == "active"
       self.membership_status = "inactive"
+    else
+      self.membership_status = "active"
     end
     self.update()
   end
