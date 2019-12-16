@@ -35,8 +35,15 @@ class Lesson
   def self.all() #READ
     sql = "SELECT * FROM lessons"
     lesson_data = SqlRunner.run(sql)
-    lessons = map_lessons(class_data)
+    lessons = map_lessons(lesson_data)
     return lessons
+  end
+
+  def self.find_by_id(id)
+    sql = "SELECT * FROM lessons WHERE id = $1"
+    values = [id]
+    lesson_data = SqlRunner.run(sql, values).first
+    return Lesson.new(lesson_data)
   end
 
   def update() #UPDATE
