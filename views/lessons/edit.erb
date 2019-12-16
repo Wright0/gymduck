@@ -8,7 +8,7 @@
     <label for="lesson-type">Lesson:</label>
     <select id="lesson-type" name="lesson_tier_id">
       <% @membership_tiers.each do | tier | %>
-      <option value ="<%= tier.id %>" <%= "selected" if @lesson.membership_tier_id == tier.id %>><%= tier.name %></option>
+      <option value ="<%= tier.id %>" <%= "selected" if @lesson.lesson_tier_id == tier.id %>><%= tier.name %></option>
       <% end %>
     </select>
 
