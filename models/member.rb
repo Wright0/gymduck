@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('./membership_tiers')
 
 class Member
 
@@ -81,6 +82,11 @@ class Member
     values = [@id]
     results = SqlRunner.run(sql, values)
     return Lesson.map_lessons(results)
+  end
+
+  def membership_tier_name() #returns the name of the membership tier from the id
+    membership = MembershipTier.find_by_id(@membership_tier_id)
+    return membership.name
   end
 
   def set_membership_status

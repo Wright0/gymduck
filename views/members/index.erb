@@ -13,7 +13,7 @@
       <tr>
         <td><%= member.name %></td>
         <td><%= member.age %></td>
-        <td><%= member.membership_type %></td>
+        <td><%= member.membership_tier_name() %></td>
         <td><%= member.membership_status %></td>
         <td><a href="/members/<%= member.id %>">Member profile</a></td>
       </tr>
