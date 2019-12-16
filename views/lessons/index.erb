@@ -4,7 +4,7 @@
     <table class="memberlist">
       <tr>
         <th>Name:</th>
-        <th>Lesson type:</th>
+        <th>Membership tier:</th>
         <th>Lesson date:</th>
         <th>Lesson time:</th>
         <th></th>
@@ -12,7 +12,7 @@
       <% @lessons.each do | lesson | %>
       <tr>
         <td><%= lesson.name %></td>
-        <td><%= lesson.lesson_type %></td>
+        <td><%= lesson.lesson_tier_name() %></td>
         <td><%= lesson.lesson_date %></td>
         <td><%= lesson.lesson_time %></td>
         <td><a href="/lessons/<%= lesson.id %>/edit">Update lesson information</a></td>

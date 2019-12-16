@@ -63,25 +63,25 @@ member3.save()
 member4.save()
 member5.save()
 member6.save()
-#
-# lesson1 = Lesson.new({
-#   'name' => 'Pilates',
-#   'lesson_type' => 'premium',
-#   'lesson_date' => 'Tuesday',
-#   'lesson_time' => '20:00'
-#   })
-#
-# lesson2 = Lesson.new({
-#   'name' => 'Yoga',
-#   'lesson_type' => 'basic',
-#   'lesson_date' => 'Wednesday',
-#   'lesson_time' => '18:00'
-#   })
-#
-# lesson1.save()
-# lesson2.save()
-#
-#
+
+lesson1 = Lesson.new({
+  'name' => 'Pilates',
+  'lesson_tier_id' => membership_tier1.id,
+  'lesson_date' => 'Tuesday',
+  'lesson_time' => '20:00'
+  })
+
+lesson2 = Lesson.new({
+  'name' => 'Yoga',
+  'lesson_tier_id' => membership_tier2.id,
+  'lesson_date' => 'Wednesday',
+  'lesson_time' => '18:00'
+  })
+
+lesson1.save()
+lesson2.save()
+
+
 # booking1 = Booking.new({
 #   'member_id' => member1.id,
 #   'lesson_id' => lesson1.id

@@ -12,6 +12,7 @@ end
 
 get '/lessons/:id/edit' do #Edit existing lesson
   @lesson = Lesson.find_by_id(params[:id])
+  @membership_tiers = MembershipTier.all()
   erb(:"lessons/edit")
 end
 

@@ -77,7 +77,12 @@ class Lesson
     return Member.map_members(results)
   end
 
-  # Helper method
+  def lesson_tier_name() #returns the name of the membership/lesson tier from the id
+    lesson_tier = MembershipTier.find_by_id(@lesson_tier_id)
+    return lesson_tier.name
+  end
+
+  # Helper methods
   def self.map_lessons(lesson_data)
     return lesson_data.map{ |lesson| Lesson.new(lesson)}
   end
