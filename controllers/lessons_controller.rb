@@ -16,6 +16,10 @@ get '/lessons/:id/edit' do #Edit existing lesson
   erb(:"lessons/edit")
 end
 
+get '/lessons/:id/member' do #Adding a member into a lesson
+  erb(:"bookings/new")
+end
+
 post '/lessons/:id' do #Savings edits to existing lesson
   Lesson.new( params ).update
   redirect to '/lessons'
@@ -28,6 +32,7 @@ end
 
 get '/lessons/:id' do #show a specific lesson's page
   @lesson = Lesson.find_by_id(params[:id])
+  @members = @lesson.members()
   erb(:"/lessons/show")
 end
 

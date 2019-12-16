@@ -1,11 +1,19 @@
 <main>
   <h1>Lesson information</h1>
 
-  <div class="member_profile">
+  <div class="booking_page">
 
     <div>
-      <p>Name: <%= @lesson.name %></p>
-    </div>
 
+      <p>Name: <%= @lesson.name %></p>
+      <p>Members booked in class:</p>
+      <ul>
+        <% @members.each do | member | %>
+        <li><%=member.name %></li>
+        <% end %>
+      </ul>
+
+      <a href="link">Add member</a>
+    </div>
   </div>
 </main>

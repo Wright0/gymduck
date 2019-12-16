@@ -34,7 +34,7 @@ class Lesson
   end
 
   def self.all() #READ
-    sql = "SELECT * FROM lessons"
+    sql = "SELECT * FROM lessons ORDER BY lesson_tier_id ASC "
     lesson_data = SqlRunner.run(sql)
     lessons = map_lessons(lesson_data)
     return lessons
@@ -82,6 +82,7 @@ class Lesson
     lesson_tier = MembershipTier.find_by_id(@lesson_tier_id)
     return lesson_tier.name
   end
+
 
   # Helper methods
   def self.map_lessons(lesson_data)

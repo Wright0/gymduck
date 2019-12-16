@@ -33,7 +33,6 @@ class Booking
     Member.map_members(results)
   end
 
-
   # Helper method
   def self.map_bookings(booking_data)
     return booking_data.map{ |booking| Booking.new(booking)}

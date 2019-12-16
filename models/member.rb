@@ -34,7 +34,7 @@ class Member
   end
 
   def self.all() #Read
-    sql = "SELECT * FROM members"
+    sql = "SELECT * FROM members ORDER BY name ASC "
     member_data = SqlRunner.run(sql)
     members = map_members(member_data)
     return members
@@ -89,13 +89,18 @@ class Member
     return membership.name
   end
 
-  def set_membership_status
+  def set_membership_status #toggles the membership status
     if membership_status == "active"
       @membership_status = "inactive"
     else
       @membership_status = "active"
     end
     update_status()
+  end
+
+  #Checks that a member's tier is high enough to take the lesson. Returns true or false
+  def membership_tier_valid?(lesson)
+    @membership_tier_id >= lesson.lesson_tier_id
   end
 
 # Helper methods

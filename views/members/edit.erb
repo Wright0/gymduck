@@ -1,21 +1,25 @@
 <main>
-  <form method="POST" action="/members/<%= @member.id %>">
+  <div class="edit_screen_box">
 
-    <label for="name">Name:</label>
-    <input type="text" name="name" id="name" value="<%= @member.name %>">
+    <form method="POST" action="/members/<%= @member.id %>">
 
-    <label for="age">Age:</label>
-    <input type="number" min="16" name="age" id="age" value="<%= @member.age %>">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" value="<%= @member.name %>">
 
-    <label for="membership-type">Membership_type:</label>
-    <select id="membership-type" name="membership_tier_id">
-      <% @membership_tiers.each do | tier | %>
-      <option value ="<%= tier.id %>" <%= "selected" if @member.membership_tier_id == tier.id %>><%= tier.name %></option>
-      <% end %>
-    </select>
+      <label for="age">Age:</label>
+      <input type="number" min="16" name="age" id="age" value="<%= @member.age %>">
 
-    <input type="submit" value="Update Member">
+      <label for="membership-type">Membership_type:</label>
+      <select id="membership-type" name="membership_tier_id">
+        <% @membership_tiers.each do | tier | %>
+        <option value ="<%= tier.id %>" <%= "selected" if @member.membership_tier_id == tier.id %>><%= tier.name %></option>
+        <% end %>
+      </select>
 
-  </form>
+      <input type="submit" value="Update Member">
+
+    </form>
+
+  </div>
 
 </main>

@@ -1,5 +1,5 @@
 body {
-  background-image: url("images/insung-yoon-dYXMHFb9pJw-unsplash.jpg");
+  /* background-image: url("images/insung-yoon-dYXMHFb9pJw-unsplash.jpg"); */
   background-repeat:no-repeat;
   background-size:cover;
   background-color: #333;
@@ -19,17 +19,29 @@ nav{
 }
 
 ul {
+  list-style-type: none;
+}
+
+li {
+  text-align: left;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul.nav {
   margin: 0px;
   list-style-type: none;
   background-color: #333;
   overflow: hidden;
 }
 
-li {
+li.nav {
   float: left;
 }
 
-li a {
+li a.nav {
   display: block;
   text-align: center;
   padding: 25px 20px;
@@ -60,6 +72,22 @@ div.member_profile {
   flex-direction: row;
   padding: 20px;
   background-color: #CAD8DB;
+}
+
+div.booking_page {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  background-color: #CAD8DB;
+}
+
+/* Top two are the same. Redundant for now. */
+
+div.edit_screen_box {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    background-color: #CAD8DB;
 }
 
 input[type="submit"] {

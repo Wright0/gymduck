@@ -97,26 +97,25 @@ lesson2.save()
 lesson3.save()
 lesson4.save()
 
+booking1 = Booking.new({
+  'member_id' => member1.id,
+  'lesson_id' => lesson1.id
+  })
 
-# booking1 = Booking.new({
-#   'member_id' => member1.id,
-#   'lesson_id' => lesson1.id
-#   })
-#
-# booking2 = Booking.new({
-#   'member_id' => member2.id,
-#   'lesson_id' => lesson2.id
-#   })
-#
-# booking3 = Booking.new({
-#   'member_id' => member1.id,
-#   'lesson_id' => lesson2.id
-#   })
-#
-# booking1.save
-# booking2.save
-# booking3.save
-#
+booking2 = Booking.new({
+  'member_id' => member2.id,
+  'lesson_id' => lesson2.id
+  })
+
+booking3 = Booking.new({
+  'member_id' => member1.id,
+  'lesson_id' => lesson2.id
+  })
+
+booking1.save
+booking2.save
+booking3.save
+
 
 binding.pry
 nil
