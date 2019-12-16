@@ -8,6 +8,16 @@ get '/members' do # show all
   erb(:"members/index")
 end
 
+get '/members/new' do #Adding a new member
+  erb(:"members/new")
+end
+
+post '/members' do #Saving a new member
+  @member = Member.new(params)
+  @member.save()
+  erb(:"members/create")
+end
+
 get '/members/:id/edit' do #Edit existing member
   @member = Member.find_by_id(params[:id])
   erb(:"members/edit")
