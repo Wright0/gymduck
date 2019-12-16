@@ -19,3 +19,13 @@ post '/lessons/:id' do #Savings edits to existing lesson
   Lesson.new( params ).update
   redirect to '/lessons'
 end
+
+get '/lessons/new' do
+  erb(:"/lessons/new")
+end
+
+post '/lessons' do
+  @lesson = Lesson.new(params)
+  @lesson.save()
+  redirect to '/lessons'
+end
