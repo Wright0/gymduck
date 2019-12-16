@@ -8,10 +8,10 @@
     <input type="number" min="16" name="age" id="age" value="<%= @member.age %>">
 
     <label for="membership-type">Membership_type:</label>
-    <select id="membership-type" name="membership_type" value="<%= @member.membership_tier_name() %>">
-      <option value ="basic">Basic</option>
-      <option value="premium">Premium</option>
-      <option value="trial">Trial</option>
+    <select id="membership-type" name="membership_type">
+      <% @membership_tiers.each do | tier | %>
+      <option value ="<%= tier.id %>" <%= "selected" if @member.membership_tier_id == tier.id %>><%= tier.name %></option>
+      <% end %>
     </select>
 
     <input type="submit" value="Update Member">

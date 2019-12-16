@@ -20,6 +20,7 @@ end
 
 get '/members/:id/edit' do #Edit existing member
   @member = Member.find_by_id(params[:id])
+  @membership_tiers = MembershipTier.all()
   erb(:"members/edit")
 end
 
