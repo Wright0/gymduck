@@ -22,6 +22,7 @@ post '/lessons/:id' do #Savings edits to existing lesson
 end
 
 get '/lessons/new' do
+  @membership_tiers = MembershipTier.all()
   erb(:"/lessons/new")
 end
 

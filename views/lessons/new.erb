@@ -4,10 +4,10 @@
   <input type="text" name="name" id="name">
 
   <label for="lesson-type">Lesson type:</label>
-  <select id="lesson-type" name="lesson_type">
-    <option value="basic">Basic</option>
-    <option value="premium">Premium</option>
-    <option value="trial">Trial</option>
+  <select id="lesson-type" name="lesson_tier_id">
+    <% @membership_tiers.each do | tier | %>
+    <option value ="<%= tier.id %>"><%= tier.name %></option>
+    <% end %>
   </select>
 
   <label for="lesson-date">Lesson day:</label>
