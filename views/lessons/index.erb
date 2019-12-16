@@ -8,6 +8,7 @@
         <th>Lesson date:</th>
         <th>Lesson time:</th>
         <th></th>
+        <th></th>
       </tr>
       <% @lessons.each do | lesson | %>
       <tr>
@@ -15,6 +16,7 @@
         <td><%= lesson.lesson_tier_name() %></td>
         <td><%= lesson.lesson_date %></td>
         <td><%= lesson.lesson_time %></td>
+        <td><a href="/lessons/<%= lesson.id %>">Bookings</a></td>
         <td><a href="/lessons/<%= lesson.id %>/edit">Update lesson information</a></td>
       </tr>
       <% end %>

@@ -1,0 +1,23 @@
+<main>
+  <h1>All Bookings</h1>
+  <div>
+    <table class="memberlist">
+      <tr>
+        <th>Name of lesson:</th>
+        <th>Lesson day:</th>
+        <th>Lesson time:</th>
+        <th></th>
+      </tr>
+      <% @bookings.each do | booking | %>
+      <tr>
+        <td><%= THIS WILL BE THE LESSON NAME %></td>
+        <td><%= THIS WILL BE THE LESSON DAY %></td>
+        <td><%= THIS WILL BE THE LESSON TIME %></td>
+        <td><a href="/bookings/<%= booking.id %>">Member list</a></td>
+      </tr>
+      <% end %>
+    </table>
+
+  </div>
+
+</main>

@@ -21,12 +21,17 @@ post '/lessons/:id' do #Savings edits to existing lesson
   redirect to '/lessons'
 end
 
-get '/lessons/new' do
+get '/lessons/new' do #Create new lesson
   @membership_tiers = MembershipTier.all()
   erb(:"/lessons/new")
 end
 
-post '/lessons' do
+get '/lessons/:id' do #show a specific lesson's page
+  @lesson = Lesson.find_by_id(params[:id])
+  erb(:"/lessons/show")
+end
+
+post '/lessons' do #Save the new lesson
   @lesson = Lesson.new(params)
   @lesson.save()
   redirect to '/lessons'

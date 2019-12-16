@@ -26,7 +26,7 @@ class Booking
     @id = id.to_i
   end
 
-  def members_in_gym_class()
+  def members_in_lesson()
     sql = "SELECT * FROM members WHERE id = $1"
     values = [@lesson_id]
     results = SqlRunner.run(sql, values)
