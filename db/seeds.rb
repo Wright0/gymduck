@@ -78,8 +78,24 @@ lesson2 = Lesson.new({
   'lesson_time' => '18:00'
   })
 
+lesson3 = Lesson.new({
+  'name' => 'Zumba',
+  'lesson_tier_id' => membership_tier3.id,
+  'lesson_date' => 'Wednesday',
+  'lesson_time' => '11:00'
+  })
+
+lesson4 = Lesson.new({
+  'name' => 'Boxing',
+  'lesson_tier_id' => membership_tier1.id,
+  'lesson_date' => 'Monday',
+  'lesson_time' => '9:00'
+  })
+
 lesson1.save()
 lesson2.save()
+lesson3.save()
+lesson4.save()
 
 
 # booking1 = Booking.new({
