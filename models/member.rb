@@ -3,12 +3,13 @@ require_relative('./membership_tiers')
 
 class Member
 
-  attr_accessor :name, :age, :membership_tier_id, :membership_status
+  attr_accessor :first_name, :last_name, :age, :membership_tier_id, :membership_status
   attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @name = options['name']
+    @first_name = options['first_name']
+    @last_name = options['last_name']
     @age = options['age']
     @membership_tier_id = options['membership_tier_id'].to_i
     @membership_status = options['membership_status'] || "active"
@@ -17,24 +18,25 @@ class Member
   def save() #Create
     sql = "INSERT INTO members
     (
-      name,
+      first_name,
+      last_name,
       age,
       membership_tier_id,
       membership_status
     )
     VALUES
     (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5
     )
     RETURNING id"
-    values = [@name, @age, @membership_tier_id, @membership_status]
+    values = [@first_name, @last_name, @age, @membership_tier_id, @membership_status]
     result = SqlRunner.run(sql, values)
     id = result.first['id']
     @id = id.to_i
   end
 
   def self.all() #Read
-    sql = "SELECT * FROM members ORDER BY name ASC "
+    sql = "SELECT * FROM members ORDER BY last_name ASC "
     member_data = SqlRunner.run(sql)
     members = map_members(member_data)
     return members
@@ -51,14 +53,15 @@ class Member
     sql = "UPDATE members
     SET
     (
-      name,
+      first_name,
+      last_name,
       age,
       membership_tier_id
     ) =
     (
-      $1, $2, $3
-    ) WHERE id = $4"
-    values = [@name, @age, @membership_tier_id, @id]
+      $1, $2, $3, $4
+    ) WHERE id = $5"
+    values = [@first_name, @last_name, @age, @membership_tier_id, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -101,6 +104,10 @@ class Member
   #Checks that a member's tier is high enough to take the lesson. Returns true or false
   def membership_tier_valid?(lesson)
     @membership_tier_id >= lesson.lesson_tier_id
+  end
+
+  def join_name()
+    return "#{@first_name} #{@last_name}"
   end
 
 # Helper methods

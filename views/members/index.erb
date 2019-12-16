@@ -3,7 +3,7 @@
   <div>
     <table class="memberlist">
       <tr>
-        <th>First name</th>
+        <th>Name</th>
         <th>Age</th>
         <th>Membership Type</th>
         <th>Membership Status</th>
@@ -11,7 +11,7 @@
       </tr>
       <% @members.each do | member | %>
       <tr>
-        <td><%= member.name %></td>
+        <td><%= member.join_name()%></td>
         <td><%= member.age %></td>
         <td><%= member.membership_tier_name() %></td>
         <td><%= member.membership_status %></td>

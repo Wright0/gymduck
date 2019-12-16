@@ -22,37 +22,43 @@ membership_tier2.save()
 membership_tier3.save()
 
 member1 = Member.new({
-  'name' => 'Shane Forster',
+  'first_name' => 'Shane',
+  'last_name' => 'Forster',
   'age' => '28',
   'membership_tier_id' => membership_tier1.id,
   'membership_status' => 'active'})
 
 member2 = Member.new({
-  'name' => 'Olivia Wright',
+  'first_name' => 'Olivia',
+  'last_name' => 'Wright',
   'age' => '27',
   'membership_tier_id' => membership_tier2.id,
   'membership_status' => 'active'})
 
 member3 = Member.new({
-  'name' => 'Tiffany Forster',
+  'first_name' => 'Tiffany',
+  'last_name' => 'Forster',
   'age' => '34',
   'membership_tier_id' => membership_tier3.id,
   'membership_status' => 'inactive'})
 
 member4 = Member.new({
-  'name' => 'Cody Forster',
+  'first_name' => 'Cody',
+  'last_name' => 'Forster',
   'age' => '30',
   'membership_tier_id' => membership_tier1.id,
   'membership_status' => 'active'})
 
 member5 = Member.new({
-  'name' => 'Kate Forster',
+  'first_name' => 'Kate',
+  'last_name' => 'Forster',
   'age' => '29',
   'membership_tier_id' => membership_tier2.id,
   'membership_status' => 'active'})
 
 member6 = Member.new({
-  'name' => 'Josh Forster',
+  'first_name' => 'Josh',
+  'last_name' => 'Forster',
   'age' => '23',
   'membership_tier_id' => membership_tier3.id,
   'membership_status' => 'active'})

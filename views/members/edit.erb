@@ -3,8 +3,11 @@
 
     <form method="POST" action="/members/<%= @member.id %>">
 
-      <label for="name">Name:</label>
-      <input type="text" name="name" id="name" value="<%= @member.name %>">
+      <label for="first-name">First name:</label>
+      <input type="text" name="first_name" id="first-name" value="<%= @member.first_name %>">
+
+      <label for="last-name">Last name:</label>
+      <input type="text" name="last_name" id="last-name" value="<%= @member.last_name %>">
 
       <label for="age">Age:</label>
       <input type="number" min="16" name="age" id="age" value="<%= @member.age %>">

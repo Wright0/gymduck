@@ -19,7 +19,8 @@ CREATE TABLE lessons (
 
 CREATE TABLE members (
   id SERIAL primary key,
-  name VARCHAR(225),
+  first_name VARCHAR(225),
+  last_name VARCHAR(225),
   age int,
   membership_tier_id INT REFERENCES membership_tiers(id),
   membership_status VARCHAR(255)
