@@ -58,7 +58,7 @@ class Lesson
     )  =
     (
       $1, $2, $3, $4
-    )WHERE id = $5"
+    ) WHERE id = $5"
     values = [@name, @lesson_tier_id, @lesson_date, @lesson_time, @id]
     SqlRunner.run(sql, values)
   end

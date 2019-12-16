@@ -9,6 +9,7 @@ get '/members' do # show all
 end
 
 get '/members/new' do #Creating a new member
+  @membership_tiers = MembershipTier.all()
   erb(:"members/new")
 end
 

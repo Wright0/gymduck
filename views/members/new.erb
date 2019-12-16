@@ -6,10 +6,10 @@
   <input type="number" min="16" name="age" id="age">
 
   <label for="membership-type">Membership_type:</label>
-  <select id="membership-type" name="membership_type">
-    <option value ="basic">Basic</option>
-    <option value="premium">Premium</option>
-    <option value="premium">Trial</option>
+  <select id="membership-type" name="membership_tier_id">
+    <% @membership_tiers.each do | tier | %>
+    <option value ="<%= tier.id %>"><%= tier.name %></option>
+    <% end %>
   </select>
 
   <input type="submit" value="Sign up new member">

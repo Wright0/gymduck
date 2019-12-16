@@ -8,7 +8,7 @@
     <input type="number" min="16" name="age" id="age" value="<%= @member.age %>">
 
     <label for="membership-type">Membership_type:</label>
-    <select id="membership-type" name="membership_type">
+    <select id="membership-type" name="membership_tier_id">
       <% @membership_tiers.each do | tier | %>
       <option value ="<%= tier.id %>" <%= "selected" if @member.membership_tier_id == tier.id %>><%= tier.name %></option>
       <% end %>
