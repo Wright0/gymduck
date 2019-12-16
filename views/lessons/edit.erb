@@ -1,1 +1,25 @@
-<p>test</p>
+<main>
+
+  <form method="POST" action="/lessons/<%= @lesson.id %>">
+
+    <label for="name">Lesson name:</label>
+    <input type="text" name="name" id = "name" value="<%= @lesson.name %>">
+
+    <label for="lesson-type">Lesson type:</label>
+    <select id="lesson-type" name="lesson_type" value="<%= @lesson.lesson_type %>">
+      <option value="basic">Basic</option>
+      <option value="premium">Premium</option>
+      <option value="trial">Trial</option>
+    </select>
+
+    <label for="lesson-date">Lesson day:</label>
+    <input type="text" name="lesson_date" id="lesson-date" value="<%= @lesson.lesson_date %>">
+
+    <label for="lesson-time">Lesson time:</label>
+    <input type="text" name="lesson_time" id="lesson-time" value="<%= @lesson.lesson_time %>">
+
+    <input type="submit" value="Update Lesson">
+
+  </form>
+
+</main>

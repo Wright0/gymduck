@@ -14,3 +14,8 @@ get '/lessons/:id/edit' do #Edit existing lesson
   @lesson = Lesson.find_by_id(params[:id])
   erb(:"lessons/edit")
 end
+
+post '/lessons/:id' do #Savings edits to existing lesson
+  Lesson.new( params ).update
+  redirect to '/lessons'
+end

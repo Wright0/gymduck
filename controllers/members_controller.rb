@@ -8,14 +8,14 @@ get '/members' do # show all
   erb(:"members/index")
 end
 
-get '/members/new' do #Adding a new member
+get '/members/new' do #Creating a new member
   erb(:"members/new")
 end
 
-post '/members' do #Saving a new member
+post '/members' do #Saving the new member
   @member = Member.new(params)
   @member.save()
-  erb(:"members/create")
+  redirect to '/members'
 end
 
 get '/members/:id/edit' do #Edit existing member
