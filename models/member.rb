@@ -10,7 +10,7 @@ class Member
     @name = options['name']
     @age = options['age']
     @membership_type = options['membership_type']
-    @membership_status = options['membership_status']
+    @membership_status = options['membership_status'] || "active"
   end
 
   def save() #Create
@@ -85,11 +85,11 @@ class Member
 
   def set_membership_status
     if membership_status == "active"
-      self.membership_status = "inactive"
+      @membership_status = "inactive"
     else
-      self.membership_status = "active"
+      @membership_status = "active"
     end
-    self.update_status()
+    update_status()
   end
 
 # Helper methods
