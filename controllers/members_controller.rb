@@ -14,6 +14,7 @@ end
 
 post '/members' do #Saving a new member
   @member = Member.new(params)
+  @member.set_active()
   @member.save()
   erb(:"members/create")
 end
@@ -30,7 +31,7 @@ end
 
 post '/members/:id/change-status' do #Toggle between active and inactive
   member = Member.find_by_id(params[:id])
-  member.set_membership_status
+  member.switch_membership_status
   redirect to '/members'
 end
 

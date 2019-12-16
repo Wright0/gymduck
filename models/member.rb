@@ -83,13 +83,17 @@ class Member
     return Lesson.map_lessons(results)
   end
 
-  def set_membership_status
+  def switch_membership_status()
     if membership_status == "active"
       self.membership_status = "inactive"
     else
       self.membership_status = "active"
     end
     self.update_status()
+  end
+
+  def set_active()
+    self.membership_status = "active"
   end
 
 # Helper methods
