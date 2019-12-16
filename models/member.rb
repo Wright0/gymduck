@@ -2,14 +2,14 @@ require_relative('../db/sql_runner')
 
 class Member
 
-  attr_accessor :name, :age, :membership_type, :membership_status
+  attr_accessor :name, :age, :membership_tier_id, :membership_status
   attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @age = options['age']
-    @membership_type = options['membership_type']
+    @membership_tier_id = options['membership_tier_id'].to_i
     @membership_status = options['membership_status'] || "active"
   end
 
@@ -18,7 +18,7 @@ class Member
     (
       name,
       age,
-      membership_type,
+      membership_tier_id,
       membership_status
     )
     VALUES
@@ -26,7 +26,7 @@ class Member
       $1, $2, $3, $4
     )
     RETURNING id"
-    values = [@name, @age, @membership_type, @membership_status]
+    values = [@name, @age, @membership_tier_id, @membership_status]
     result = SqlRunner.run(sql, values)
     id = result.first['id']
     @id = id.to_i
@@ -52,12 +52,12 @@ class Member
     (
       name,
       age,
-      membership_type
+      membership_tier_id
     ) =
     (
       $1, $2, $3
     ) WHERE id = $4"
-    values = [@name, @age, @membership_type, @id]
+    values = [@name, @age, @membership_tier_id, @id]
     SqlRunner.run(sql, values)
   end
 

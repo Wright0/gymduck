@@ -2,13 +2,13 @@ require_relative('../db/sql_runner')
 
 class Lesson
 
-  attr_accessor :name, :lesson_type, :lesson_date, :lesson_time
+  attr_accessor :name, :lesson_tier_id, :lesson_date, :lesson_time
   attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
-    @lesson_type = options['lesson_type']
+    @lesson_tier_id = options['lesson_tier_id'].to_i
     @lesson_date = options['lesson_date']
     @lesson_time = options['lesson_time']
   end
@@ -17,7 +17,7 @@ class Lesson
     sql = "INSERT INTO lessons
     (
       name,
-      lesson_type,
+      lesson_tier_id,
       lesson_date,
       lesson_time
     )
@@ -26,7 +26,7 @@ class Lesson
       $1, $2, $3, $4
     )
     RETURNING id"
-    values = [@name, @lesson_type, @lesson_date, @lesson_time]
+    values = [@name, @lesson_tier_id, @lesson_date, @lesson_time]
     result = SqlRunner.run(sql, values)
     id = result.first['id']
     @id = id.to_i
@@ -51,14 +51,14 @@ class Lesson
     SET
     (
       name,
-      lesson_type,
+      lesson_tier_id,
       lesson_date,
       lesson_time
     )  =
     (
       $1, $2, $3, $4
     )WHERE id = $5"
-    values = [@name, @lesson_type, @lesson_date, @lesson_time, @id]
+    values = [@name, @lesson_tier_id, @lesson_date, @lesson_time, @id]
     SqlRunner.run(sql, values)
   end
 

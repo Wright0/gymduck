@@ -1,13 +1,30 @@
+require_relative ('../models/membership_tiers')
 require_relative ('../models/member')
 require_relative ('../models/lesson')
 require_relative ('../models/booking')
 
 require ('pry')
 
+membership_tier1 = MembershipTier.new({
+  'name' => 'Trial'
+  })
+
+membership_tier2 = MembershipTier.new({
+'name' => 'Basic'
+})
+
+membership_tier3 = MembershipTier.new({
+  'name' => 'Premium'
+  })
+
+membership_tier1.save()
+membership_tier2.save()
+membership_tier3.save()
+
 member1 = Member.new({
   'name' => 'Shane Forster',
   'age' => '28',
-  'membership_type' => 'premium',
+  'membership_tier_id' => 'premium',
   'membership_status' => 'active'})
 
 member2 = Member.new({
