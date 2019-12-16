@@ -1,25 +1,36 @@
 <main>
   <h1>Member List</h1>
-  <div>
-    <table class="memberlist">
-      <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Membership Type</th>
-        <th>Membership Status</th>
-        <th></th>
-      </tr>
-      <% @members.each do | member | %>
-      <tr>
-        <td><%= member.join_name()%></td>
-        <td><%= member.age %></td>
-        <td><%= member.membership_tier_name() %></td>
-        <td><%= member.membership_status %></td>
-        <td><a href="/members/<%= member.id %>">Member profile</a></td>
-      </tr>
-      <% end %>
-    </table>
 
-  </div>
+  <!-- <div> Keep working on this tomorrow. 
+
+<form method="GET" action="/members/">
+  <label for="member-search">Find member by ID:</label>
+  <input type="search" id="member-search" name=""
+  aria-label="Input member ID">
+  <button>Search</button>
+</form>
+
+  </div> -->
+
+  <br>
+
+  <table class="memberlist">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Membership Type</th>
+      <th>Membership Status</th>
+      <th></th>
+    </tr>
+    <% @members.each do | member | %>
+    <tr>
+      <td><%= member.join_name()%></td>
+      <td><%= member.age %></td>
+      <td><%= member.membership_tier_name() %></td>
+      <td><%= member.membership_status %></td>
+      <td><a href="/members/<%= member.id %>">Member profile</a></td>
+    </tr>
+    <% end %>
+  </table>
 
 </main>
