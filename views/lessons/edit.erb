@@ -1,27 +1,36 @@
 <main>
 
   <div class="edit_screen_box">
-
+    <h2>Edit lesson information</h2>
     <form method="POST" action="/lessons/<%= @lesson.id %>">
 
-      <label for="name">Lesson name:</label>
-      <input type="text" name="name" id = "name" value="<%= @lesson.name %>">
-      
-      <label for="lesson-type">Lesson:</label>
-      <select id="lesson-type" name="lesson_tier_id">
-        <% @membership_tiers.each do | tier | %>
-        <option value ="<%= tier.id %>" <%= "selected" if @lesson.lesson_tier_id == tier.id %>><%= tier.name %></option>
-        <% end %>
-      </select>
+      <div class ="form_item">
+        <label for="name">Lesson name:</label>
+        <input type="text" name="name" id = "name" value="<%= @lesson.name %>">
+      </div>
 
-      <label for="lesson-date">Lesson day:</label>
-      <input type="text" name="lesson_date" id="lesson-date" value="<%= @lesson.lesson_date %>">
+      <div class ="form_item">
+        <label for="lesson-type">Lesson:</label>
+        <select id="lesson-type" name="lesson_tier_id">
+          <% @membership_tiers.each do | tier | %>
+          <option value ="<%= tier.id %>" <%= "selected" if @lesson.lesson_tier_id == tier.id %>><%= tier.name %></option>
+          <% end %>
+        </select>
+      </div>
 
-      <label for="lesson-time">Lesson time:</label>
-      <input type="text" name="lesson_time" id="lesson-time" value="<%= @lesson.lesson_time %>">
+      <div class ="form_item">
+        <label for="lesson-date">Lesson day:</label>
+        <input type="text" name="lesson_date" id="lesson-date" value="<%= @lesson.lesson_date %>">
+      </div>
 
-      <input type="submit" value="Update Lesson">
+      <div class ="form_item">
+        <label for="lesson-time">Lesson time:</label>
+        <input type="text" name="lesson_time" id="lesson-time" value="<%= @lesson.lesson_time %>">
+      </div>
 
+      <div class ="form_item">
+        <input type="submit" value="Update Lesson">
+      </div>
     </form>
   </div>
 </main>

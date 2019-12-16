@@ -1,20 +1,36 @@
-<form method="POST" action="/members">
-  <label for="first-name">Name:</label>
-  <input type="text" name="first_name" id="first-name">
+<main>
+  <div class="edit_screen_box">
+<h2>Add new member</h2>
+    <form method="POST" action="/members">
 
-  <label for="last-name">Name:</label>
-  <input type="text" name="last_name" id="last-name">
+      <div class ="form_item">
+        <label for="first-name">First name:</label>
+        <input type="text" name="first_name" id="first-name">
+      </div>
 
-  <label for="age">Age:</label>
-  <input type="number" min="16" name="age" id="age">
+      <div class ="form_item">
+        <label for="last-name">Last name:</label>
+        <input type="text" name="last_name" id="last-name">
+      </div>
 
-  <label for="membership-type">Membership_type:</label>
-  <select id="membership-type" name="membership_tier_id">
-    <% @membership_tiers.each do | tier | %>
-    <option value ="<%= tier.id %>"><%= tier.name %></option>
-    <% end %>
-  </select>
+      <div class ="form_item">
+        <label for="age">Age:</label>
+        <input type="number" min="16" name="age" id="age">
+      </div>
 
-  <input type="submit" value="Sign up new member">
+      <div class ="form_item">
+        <label for="membership-type">Membership_type:</label>
+        <select id="membership-type" name="membership_tier_id">
+          <% @membership_tiers.each do | tier | %>
+          <option value ="<%= tier.id %>"><%= tier.name %></option>
+          <% end %>
+        </select>
+      </div>
 
-</form>
+      <div class ="form_item">
+        <input type="submit" value="Sign up new member">
+      </div>
+
+    </form>
+  </div>
+</main>

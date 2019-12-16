@@ -1,21 +1,36 @@
-<form method="post" action="/lessons">
+<main>
+  <div class="edit_screen_box">
+    <h2>Create new lesson</h2>
+    <form method="post" action="/lessons">
 
-  <label for="name">Lesson name:</label>
-  <input type="text" name="name" id="name">
+      <div class ="form_item">
+        <label for="name">Activity name:</label>
+        <input type="text" name="name" id="name">
+      </div>
 
-  <label for="lesson-type">Lesson type:</label>
-  <select id="lesson-type" name="lesson_tier_id">
-    <% @membership_tiers.each do | tier | %>
-    <option value ="<%= tier.id %>"><%= tier.name %></option>
-    <% end %>
-  </select>
+      <div class ="form_item">
+        <label for="lesson-type">Membership tier:</label>
+        <select id="lesson-type" name="lesson_tier_id">
+          <% @membership_tiers.each do | tier | %>
+          <option value ="<%= tier.id %>"><%= tier.name %></option>
+          <% end %>
+        </select>
+      </div>
 
-  <label for="lesson-date">Lesson day:</label>
-  <input type="text" name="lesson_date" id="lesson-date">
+      <div class ="form_item">
+        <label for="lesson-date">Day:</label>
+        <input type="text" name="lesson_date" id="lesson-date">
+      </div>
 
-  <label for="lesson-time">Lesson time:</label>
-  <input type="text" name="lesson_time" id="lesson-time">
+      <div class ="form_item">
+        <label for="lesson-time">Time:</label>
+        <input type="text" name="lesson_time" id="lesson-time">
+      </div>
 
-  <input type="submit" value="Create Lesson">
+      <div class ="form_item">
+        <input type="submit" value="Create Lesson">
+      </div>
 
-</form>
+    </form>
+  </div>
+</main>

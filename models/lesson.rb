@@ -83,7 +83,6 @@ class Lesson
     return lesson_tier.name
   end
 
-
   # Helper methods
   def self.map_lessons(lesson_data)
     return lesson_data.map{ |lesson| Lesson.new(lesson)}
