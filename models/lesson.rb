@@ -3,7 +3,7 @@ require_relative('./membership_tiers')
 
 class Lesson
 
-  attr_accessor :name, :lesson_tier_id, :lesson_date, :lesson_time, :capacity
+  attr_accessor :name, :lesson_tier_id, :date, :time, :capacity
   attr_reader :id
 
   def initialize(options)

@@ -32,8 +32,6 @@ end
 
 get '/lessons/:id' do #show a specific lesson's page
   @lesson = Lesson.find_by_id(params[:id])
-  @capacity = @lesson.capacity
-
   @members = @lesson.members()
   @number_booked = @members.length
   erb(:"/lessons/show")

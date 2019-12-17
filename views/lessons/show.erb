@@ -6,8 +6,8 @@
     <div>
 
       <p>Lesson: <%= @lesson.name %></p>
-      <p>Date: <%= @lesson.lesson_date %></p>
-      <p>Time: <%= @lesson.lesson_time %></p>
+      <p>Date: <%= @lesson.date %></p>
+      <p>Time: <%= @lesson.time %></p>
 
       <p>Members booked in class:</p>
       <% if @number_booked == 0 %>
@@ -20,7 +20,7 @@
         </ul>
       <% end %>
 
-      <% if @number_booked >= @capacity %>
+      <% if @number_booked >= @lesson.capacity %>
         <p> This class is fully booked</p>
       <% else %>
         <a href="link">Add member</a>
