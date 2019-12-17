@@ -56,7 +56,7 @@ class Member
       first_name,
       last_name,
       age,
-      membership_tier_id
+      membership_tier_id,
     ) =
     (
       $1, $2, $3, $4

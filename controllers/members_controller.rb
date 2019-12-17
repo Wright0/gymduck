@@ -27,6 +27,7 @@ end
 
 get '/members/:id' do # show member profile
   @member = Member.find_by_id(params[:id])
+  @booked_lessons = @member.lessons()
   erb(:"members/show")
 end
 

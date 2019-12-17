@@ -26,42 +26,48 @@ member1 = Member.new({
   'last_name' => 'Forster',
   'age' => '28',
   'membership_tier_id' => membership_tier1.id,
-  'membership_status' => 'active'})
+  'membership_status' => 'active'
+  })
 
 member2 = Member.new({
   'first_name' => 'Olivia',
   'last_name' => 'Wright',
   'age' => '27',
   'membership_tier_id' => membership_tier2.id,
-  'membership_status' => 'active'})
+  'membership_status' => 'active'
+  })
 
 member3 = Member.new({
   'first_name' => 'Tiffany',
   'last_name' => 'Forster',
   'age' => '34',
   'membership_tier_id' => membership_tier3.id,
-  'membership_status' => 'inactive'})
+  'membership_status' => 'inactive'
+  })
 
 member4 = Member.new({
   'first_name' => 'Cody',
   'last_name' => 'Forster',
   'age' => '30',
   'membership_tier_id' => membership_tier1.id,
-  'membership_status' => 'active'})
+  'membership_status' => 'active'
+  })
 
 member5 = Member.new({
   'first_name' => 'Kate',
   'last_name' => 'Forster',
   'age' => '29',
   'membership_tier_id' => membership_tier2.id,
-  'membership_status' => 'active'})
+  'membership_status' => 'active'
+  })
 
 member6 = Member.new({
   'first_name' => 'Josh',
   'last_name' => 'Forster',
   'age' => '23',
   'membership_tier_id' => membership_tier3.id,
-  'membership_status' => 'active'})
+  'membership_status' => 'active'
+  })
 
 member1.save()
 member2.save()
@@ -122,9 +128,15 @@ booking3 = Booking.new({
   'lesson_id' => lesson2.id
   })
 
+  booking4 = Booking.new({
+    'member_id' => 1,
+    'lesson_id' => 2
+    })
+
 booking1.save
 booking2.save
 booking3.save
+booking4.save
 
 binding.pry
 nil

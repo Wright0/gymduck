@@ -16,7 +16,18 @@
         <td><%= lesson.lesson_tier_name() %></td>
         <td><%= lesson.date %></td>
         <td><%= lesson.time %></td>
-        <td><a href="/lessons/<%= lesson.id %>/edit">dropdown?</a></td>
+
+        <td><form method="POST" action="/lessons/<%= lesson.id %>/booking">
+
+          <label for="member_id">Member ID:</label>
+          <input type="number" name="member_id" id="member_id">
+
+          <input id="lesson-id" name="lesson_id" type="hidden" value="<%= lesson.id %>">
+
+          <input type="submit" value="Add member">
+          </form>
+        </td>
+
         <td><a href="/lessons/<%= lesson.id %>">Bookings</a> | <a href="/lessons/<%= lesson.id %>/edit">Edit</a></td>
       </tr>
       <% end %>
