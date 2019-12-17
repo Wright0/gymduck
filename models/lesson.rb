@@ -3,15 +3,16 @@ require_relative('./membership_tiers')
 
 class Lesson
 
-  attr_accessor :name, :lesson_tier_id, :lesson_date, :lesson_time
+  attr_accessor :name, :lesson_tier_id, :lesson_date, :lesson_time, :capacity
   attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @lesson_tier_id = options['lesson_tier_id'].to_i
-    @lesson_date = options['lesson_date']
-    @lesson_time = options['lesson_time']
+    @date = options['date']
+    @time = options['time']
+    @capacity = options['capacity'].to_i
   end
 
   def save() #CREATE
@@ -19,15 +20,16 @@ class Lesson
     (
       name,
       lesson_tier_id,
-      lesson_date,
-      lesson_time
+      date,
+      time,
+      capacity
     )
     VALUES
     (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5
     )
     RETURNING id"
-    values = [@name, @lesson_tier_id, @lesson_date, @lesson_time]
+    values = [@name, @lesson_tier_id, @date, @time, @capacity]
     result = SqlRunner.run(sql, values)
     id = result.first['id']
     @id = id.to_i
@@ -54,12 +56,13 @@ class Lesson
       name,
       lesson_tier_id,
       lesson_date,
-      lesson_time
+      lesson_time,
+      capacity
     )  =
     (
-      $1, $2, $3, $4
-    ) WHERE id = $5"
-    values = [@name, @lesson_tier_id, @lesson_date, @lesson_time, @id]
+      $1, $2, $3, $4, $5
+    ) WHERE id = $6"
+    values = [@name, @lesson_tier_id, @date, @time, @capacity, @id]
     SqlRunner.run(sql, values)
   end
 

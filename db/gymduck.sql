@@ -13,8 +13,9 @@ CREATE TABLE lessons (
   id SERIAL primary key,
   name VARCHAR(255),
   lesson_tier_id INT REFERENCES membership_tiers(id),
-  lesson_date VARCHAR(255),
-  lesson_time VARCHAR(255)
+  date VARCHAR(255),
+  time VARCHAR(255),
+  capacity INT
 );
 
 CREATE TABLE members (

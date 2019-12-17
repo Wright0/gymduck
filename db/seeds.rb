@@ -73,29 +73,33 @@ member6.save()
 lesson1 = Lesson.new({
   'name' => 'Pilates',
   'lesson_tier_id' => membership_tier1.id,
-  'lesson_date' => 'Tuesday',
-  'lesson_time' => '20:00'
+  'date' => 'Tuesday',
+  'time' => '20:00',
+  'capacity' => 5
   })
 
 lesson2 = Lesson.new({
   'name' => 'Yoga',
   'lesson_tier_id' => membership_tier2.id,
-  'lesson_date' => 'Wednesday',
-  'lesson_time' => '18:00'
+  'date' => 'Wednesday',
+  'time' => '18:00',
+  'capacity' => 1
   })
 
 lesson3 = Lesson.new({
   'name' => 'Zumba',
   'lesson_tier_id' => membership_tier3.id,
-  'lesson_date' => 'Wednesday',
-  'lesson_time' => '11:00'
+  'date' => 'Wednesday',
+  'time' => '11:00',
+  'capacity' => 9
   })
 
 lesson4 = Lesson.new({
   'name' => 'Boxing',
   'lesson_tier_id' => membership_tier1.id,
-  'lesson_date' => 'Monday',
-  'lesson_time' => '9:00'
+  'date' => 'Monday',
+  'time' => '9:00',
+  'capacity' => 20
   })
 
 lesson1.save()

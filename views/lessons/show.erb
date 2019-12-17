@@ -5,15 +5,29 @@
 
     <div>
 
-      <p>Name: <%= @lesson.name %></p>
-      <p>Members booked in class:</p>
-      <ul>
-        <% @members.each do | member | %>
-        <li><%=member.name %></li>
-        <% end %>
-      </ul>
+      <p>Lesson: <%= @lesson.name %></p>
+      <p>Date: <%= @lesson.lesson_date %></p>
+      <p>Time: <%= @lesson.lesson_time %></p>
 
-      <a href="link">Add member</a>
+      <p>Members booked in class:</p>
+      <% if @number_booked == 0 %>
+        <p>No one is signed up for this class</p>
+      <% else %>
+        <ul>
+          <% @members.each do | member | %>
+          <li><%=member.join_name() %> <a href="LINK">Remove</a> | <a href="LINK">Profile</a></li>
+          <% end %>
+        </ul>
+      <% end %>
+
+      <% if @number_booked >= @capacity %>
+        <p> This class is fully booked</p>
+      <% else %>
+        <a href="link">Add member</a>
+      <% end %>
+
+
+
     </div>
   </div>
 </main>
