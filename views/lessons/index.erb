@@ -1,7 +1,7 @@
 <main>
   <h1>All Lessons</h1>
   <div>
-    <table class="memberlist">
+    <table class="datalist">
       <tr>
         <th>Name:</th>
         <th>Membership tier:</th>
@@ -28,13 +28,10 @@
           </form>
         </td>
 
-        <td><a href="/lessons/<%= lesson.id %>">Bookings</a> | <a href="/lessons/<%= lesson.id %>/edit">Edit</a></td>
+        <td><a href="/lessons/<%= lesson.id %>"><i class="fab fa-readme"></i> Bookings</a> | <a href="/lessons/<%= lesson.id %>/edit"><i class="far fa-edit"></i> edit </a></td>
       </tr>
       <% end %>
     </table>
-
-    <a href="/lessons/new">Add a new lesson</a>
-
   </div>
 
 </main>

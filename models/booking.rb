@@ -1,4 +1,7 @@
 require_relative('../db/sql_runner')
+require_relative('./membership_tiers')
+require_relative('./member')
+require_relative('./lesson')
 
 class Booking
   attr_reader :id, :member_id, :gym_class_id
@@ -44,6 +47,17 @@ class Booking
     values = [@lesson_id]
     results = SqlRunner.run(sql, values)
     Member.map_members(results)
+  end
+
+  def complete_booking()
+    member = Member.find_by_id(@member_id)
+    lesson = Lesson.find_by_id(@lesson_id)
+
+    if member.membership_tier_valid?(lesson)
+      self.save()
+    else
+      return "wrong membership tier"
+    end
   end
 
   # Helper method

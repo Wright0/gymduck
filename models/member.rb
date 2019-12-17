@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 require_relative('./membership_tiers')
+require_relative('./lesson')
 
 class Member
 

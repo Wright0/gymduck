@@ -29,10 +29,9 @@ get '/lessons/:id/member' do #Page to a member into a lesson
 end
 
 post '/lessons/:id/booking' do #Adds a member to a booking
-  booking = Booking.new( params )
-  # binding.pry
-  booking.save()
-  redirect to '/lessons'
+  booking = Booking.new(params)
+  booking.complete_booking()
+  erb(:'/lessons/confirmation')
 end
 
 post '/lessons/:id' do #Saves edits to existing lesson

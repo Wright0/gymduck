@@ -12,22 +12,11 @@ main {
   align-items: center;
 }
 
+/* Navigation CSS */
 nav{
   background-color: #333;
   padding: 0px;
   margin: 0px;
-}
-
-ul {
-  list-style-type: none;
-}
-
-li {
-  text-align: left;
-}
-a {
-  text-decoration: none;
-  cursor: pointer;
 }
 
 ul.nav {
@@ -49,46 +38,75 @@ li a.nav {
   color: white;
 }
 
-table.memberlist {
+ul {
+  list-style-type: none;
+}
+
+/* li {
+  text-align: left;
+} */
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.icon {
+  /* font-size: 15px; */
+  text-align: center;
+}
+
+
+
+
+
+/* Table data (member list and lesson list) */
+
+table.datalist {
   border: solid 5px orange;
   border-radius: 20px;
   border-spacing: 0px;
   border-collapse: collapse;
-  color: green;
+  color: #006C15;
   background-color: #CAD8DB;
 }
 
-table.memberlist th {
-  border: solid 2px green;
+table.datalist th {
+  border: solid 2px #006C15;
   border-radius: 20px;
   padding: 10px;
 }
 
-table.memberlist td {
-  border: solid 2px green;
+table.datalist td {
+  border: solid 2px #006C15;
   border-radius: 20px;
   padding: 10px;
 }
 
-div.member_profile {
+table.datalist td.centered {
+  text-align: center;
+}
+
+
+/* .member_profile {
   border: solid 5px orange;
   border-radius: 20px;
   display: flex;
   flex-direction: row;
   padding: 20px;
   background-color: #CAD8DB;
-}
+} */
 
-div.booking_page {
+/* .booking_page {
   display: flex;
   flex-direction: row;
   padding: 20px;
   background-color: #CAD8DB;
-}
+} */
 
 /* Top two are the same. Redundant for now. */
 
-div.edit_screen_box {
+ /* .edit_screen_box {
   margin: 50px;
   padding: 20px;
   min-height: 200px;
@@ -100,12 +118,32 @@ div.edit_screen_box {
   border: solid 5px orange;
   border-radius: 20px;
   background-color: #CAD8DB;
-}
+} */
 
-div.form_item {
-    margin: 15px;
-}
+/* div.gym-fact1 {
+  margin: 50px;
+  padding: 20px;
+  border: solid 5px orange;
+  border-radius: 20px;
+  background-color: orange;
+} */
 
-input[type="submit"] {
+/* div.gym-fact2 {
+  margin: 50px;
+  padding: 20px;
+  border: solid 5px lightgreen;
+  border-radius: 20px;
+  background-color: lightgreen;
+} */
+
+/* div.gym-fact3 {
+  margin: 50px;
+  padding: 20px;
+  border: solid 5px #FFE2A0;
+  border-radius: 20px;
+  background-color: #FFE2A0;
+} */
+
+/* input[type="submit"] {
   cursor: pointer;
-}
+} */

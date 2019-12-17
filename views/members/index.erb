@@ -1,7 +1,7 @@
 <main>
   <h1>Member List</h1>
 
-  <!-- <div> Keep working on this tomorrow. 
+  <!-- <div> Keep working on this tomorrow.
 
 <form method="GET" action="/members/">
   <label for="member-search">Find member by ID:</label>
@@ -14,21 +14,25 @@
 
   <br>
 
-  <table class="memberlist">
+  <table class="datalist">
     <tr>
       <th>Name</th>
       <th>Age</th>
       <th>Membership Type</th>
       <th>Membership Status</th>
-      <th></th>
+      <th>View Profile</th>
     </tr>
     <% @members.each do | member | %>
     <tr>
       <td><%= member.join_name()%></td>
       <td><%= member.age %></td>
       <td><%= member.membership_tier_name() %></td>
-      <td><%= member.membership_status %></td>
-      <td><a href="/members/<%= member.id %>">Member profile</a></td>
+      <td><% if member.membership_status == "active" %>
+          <i class="fas fa-user"></i> Active
+        <% else %>
+          <i class="fas fa-user-alt-slash"></i> Inactive
+        <% end %> </td>
+      <td class="centered"><a class="icon" href="/members/<%= member.id %>"><i class="far fa-address-card"></i></a></td>
     </tr>
     <% end %>
   </table>

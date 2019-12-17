@@ -15,7 +15,7 @@
     </div>
 
     <div>
-      <a href="/members/<%= @member.id %>/edit">Edit Member</a>
+      <a href="/members/<%= @member.id %>/edit"><i class="fas fa-user-edit"></i> Edit</a>
       <form  method="POST" action="/members/<%= @member.id %>/change-status">
         <input type="submit" value="Change member status">
     </div>
