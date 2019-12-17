@@ -26,6 +26,19 @@ class Booking
     @id = id.to_i
   end
 
+  def delete()
+    sql = "DELETE FROM bookings WHERE id = $1"
+    value = [@id]
+    SqlRunner.run(sql, value)
+  end
+
+  def self.find_by_other_ids(lessonid, memberid)
+    sql = "SELECT * FROM bookings WHERE lesson_id = $1 and member_id = $2"
+    value = [lessonid, memberid]
+    booking_data = SqlRunner.run(sql, value).first
+    return Booking.new(booking_data)
+  end
+
   def members_in_lesson()
     sql = "SELECT * FROM members WHERE id = $1"
     values = [@lesson_id]

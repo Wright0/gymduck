@@ -2,8 +2,15 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 
 require_relative( '../models/lesson.rb' )
+require_relative( '../models/booking.rb' )
 also_reload( '../models/*' )
 
+
+post '/lessons/:lessonid/:memberid/delete' do
+  @booking = Booking.find_by_other_ids(params[:lessonid], params[:memberid])
+  @booking.delete()
+  redirect to '/lessons'
+end
 
 get '/lessons' do # show all
   @lessons = Lesson.all()

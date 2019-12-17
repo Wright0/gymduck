@@ -126,6 +126,5 @@ booking1.save
 booking2.save
 booking3.save
 
-
 binding.pry
 nil

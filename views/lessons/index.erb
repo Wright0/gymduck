@@ -7,8 +7,8 @@
         <th>Membership tier:</th>
         <th>Lesson date:</th>
         <th>Lesson time:</th>
-        <th></th>
-        <th></th>
+        <th>Add Member</th>
+        <th>Actions</th>
       </tr>
       <% @lessons.each do | lesson | %>
       <tr>
@@ -16,8 +16,8 @@
         <td><%= lesson.lesson_tier_name() %></td>
         <td><%= lesson.date %></td>
         <td><%= lesson.time %></td>
-        <td><a href="/lessons/<%= lesson.id %>">Bookings</a></td>
-        <td><a href="/lessons/<%= lesson.id %>/edit">Update lesson information</a></td>
+        <td><a href="/lessons/<%= lesson.id %>/edit">dropdown?</a></td>
+        <td><a href="/lessons/<%= lesson.id %>">Bookings</a> | <a href="/lessons/<%= lesson.id %>/edit">Edit</a></td>
       </tr>
       <% end %>
     </table>

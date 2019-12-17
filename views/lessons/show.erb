@@ -15,7 +15,13 @@
       <% else %>
         <ul>
           <% @members.each do | member | %>
-          <li><%=member.join_name() %> <a href="LINK">Remove</a> | <a href="LINK">Profile</a></li>
+          <li><%=member.join_name() %> | <a href="/members/<%=member.id%>">Profile</a>
+
+            <form method="POST" action="/lessons/<%= @lesson.id %>/<%= member.id %>/delete">
+            <input type="submit" value="Remove">
+          </form>
+
+        </li>
           <% end %>
         </ul>
       <% end %>
