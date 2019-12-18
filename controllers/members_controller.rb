@@ -3,6 +3,14 @@ require( 'sinatra/contrib/all' )
 require_relative( '../models/member.rb' )
 also_reload( '../models/*' )
 
+
+post '/members/:memberid/:lessonid/delete' do #Delete a member from a lesson from the user page (delete the booking)
+  @booking = Booking.find_by_other_ids(params[:lessonid], params[:memberid])
+  @booking.delete()
+  id = params[:memberid]
+  redirect to "/members/#{id}"
+end
+
 get '/members' do # show all
   @members = Member.all()
   erb(:"members/index")

@@ -18,6 +18,7 @@
       <a href="/members/<%= @member.id %>/edit"><i class="fas fa-user-edit"></i> Edit</a>
       <form  method="POST" action="/members/<%= @member.id %>/change-status">
         <input type="submit" value="Change member status">
+      </form>
       </div>
 
     </div>
@@ -28,12 +29,16 @@
           <th>Lesson</th>
           <th>Date</th>
           <th>Time</th>
+          <th>Delete</th>
         </tr>
         <% @booked_lessons.each do | lesson | %>
         <tr>
           <td><%= lesson.name %></td>
           <td><%= lesson.date %></td>
           <td><%= lesson.time %></td>
+          <td><form method="POST" action="/members/<%= @member.id %>/<%= lesson.id %>/delete">
+              <button type="submit" value="Remove"><i class="fas fa-trash-alt"></i></button>
+            </form></td>
         </tr>
         <% end %>
       </table>

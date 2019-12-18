@@ -4,6 +4,7 @@
   <div class="lesson-profile-box">
 
     <div>
+      <a class="lesson-profile" href="/lessons"><i class="fas fa-angle-double-left"></i> Back to lesson page</a>
 
       <p class="bold">Lesson:</p> <%= @lesson.name %>
 
@@ -13,42 +14,39 @@
 
       <p class="bold">Members booked in class:</p>
       <% if @number_booked == 0 %>
-        <p>No one is signed up for this class</p>
+      <p>No one is signed up for this class</p>
       <% else %>
-        <div class="lesson-profile">
-          <ul>
+      <div class="lesson-profile">
+        <ul>
           <% @members.each do | member | %>
-            <li>
-              <p><%=member.join_name() %></p> <a href="/members/<%=member.id%>"><i class="far fa-address-card"></i></a>
+          <li>
+            <p><%=member.join_name() %></p> <a href="/members/<%=member.id%>"><i class="far fa-address-card"></i></a>
 
-                <form method="POST" action="/lessons/<%= @lesson.id %>/<%= member.id %>/delete">
+            <form method="POST" action="/lessons/<%= @lesson.id %>/<%= member.id %>/delete">
 
-                <button type="submit" value="Remove"><i class="fas fa-trash-alt"></i></button>
-                </form>
+              <button type="submit" value="Remove"><i class="fas fa-trash-alt"></i></button>
+            </form>
 
-            </li>
+          </li>
           <% end %>
-          </ul>
-        </div>
+        </ul>
+      </div>
       <% end %>
 
       <% if @number_booked >= @lesson.capacity %>
-        <p> This class is fully booked</p>
+      <p> This class is fully booked</p>
       <% else %>
-        <p class="bold">Add member by ID</p>
-        <form class = "lesson-member-add" method="POST" action="/lessons/<%= @lesson.id %>/booking">
+      <p class="bold">Quick add member:</p>
+      <form class = "lesson-member-add" method="POST" action="/lessons/<%= @lesson.id %>/booking">
 
-          <label for="member_id">ID:</label>
-          <input type="number" name="member_id" id="member_id">
+        <label for="member_id">ID:</label>
+        <input type="number" name="member_id" id="member_id">
 
-          <input id="lesson-id" name="lesson_id" type="hidden" value="<%= @lesson.id %>">
+        <input id="lesson-id" name="lesson_id" type="hidden" value="<%= @lesson.id %>">
 
-          <button type="submit" value="Add member"><i class="fas fa-user-plus"></i></button>
-          </form>
+        <button type="submit" value="Add member"><i class="fas fa-user-plus"></i></button>
+      </form>
       <% end %>
-
-      <a class="lesson-profile" href="/lessons"><i class="fas fa-angle-double-left"></i> Lesson page</a>
-
 
     </div>
   </div>
