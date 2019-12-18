@@ -93,10 +93,10 @@ class Member
   end
 
   def set_membership_status #toggles the membership status
-    if membership_status == "active"
-      @membership_status = "inactive"
+    if membership_status == "Active"
+      @membership_status = "Inactive"
     else
-      @membership_status = "active"
+      @membership_status = "Active"
     end
     update_status()
   end

@@ -1,6 +1,6 @@
 <main>
   <h1>Member List</h1>
-<div class="table">
+
   <table class="tabledata">
     <tr>
       <th>Name</th>
@@ -14,7 +14,7 @@
       <td><%= member.join_name()%></td>
       <td><%= member.age %></td>
       <td><%= member.membership_tier_name() %></td>
-      <td><% if member.membership_status == "active" %>
+      <td><% if member.membership_status == "Active" %>
           <i class="fas fa-user"></i> Active
         <% else %>
           <i class="fas fa-user-alt-slash"></i> Inactive
@@ -23,5 +23,5 @@
     </tr>
     <% end %>
   </table>
-</div>
+
 </main>

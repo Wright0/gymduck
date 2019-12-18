@@ -63,18 +63,6 @@ a {
 }
 
 /* Table data (member list and lesson list) */
-div.table {
- padding: 30px;
- min-height: 200px;
- min-width: 370px;
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- border: solid 5px orange;
- border-radius: 20px;
- background-color: #CAD8DB;
-}
 
 table.tabledata {
   border-spacing: 0px;
