@@ -31,10 +31,13 @@ end
 post '/lessons/:id/booking' do #Adds a member to a booking
   booking = Booking.new(params)
   result = booking.complete_booking()
-  if result == false
-    erb(:'/lessons/reject')
+  
+  if result == 'already in lesson'
+    erb(:'/lessons/reject-duplicate')
+  elsif result == 'wrong tier'
+    erb(:'/lessons/reject-membership')
   else
-   redirect to '/lessons'
+    redirect to '/lessons'
   end
 end
 

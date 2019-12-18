@@ -53,12 +53,15 @@ class Booking
     member = Member.find_by_id(@member_id)
     lesson = Lesson.find_by_id(@lesson_id)
 
-    if member.membership_tier_valid?(lesson)
-      self.save()
+    if member.member_in_class?(lesson)
+      return 'already in lesson'
+    elsif member.membership_tier_invalid?(lesson)
+      return 'wrong tier'
     else
-      return false
+      self.save()
     end
   end
+
 
   # Helper method
   def self.map_bookings(booking_data)

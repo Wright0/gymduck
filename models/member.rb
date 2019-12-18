@@ -102,8 +102,15 @@ class Member
   end
 
   #Checks that a member's tier is high enough to take the lesson. Returns true or false
-  def membership_tier_valid?(lesson)
-    @membership_tier_id >= lesson.lesson_tier_id
+  def membership_tier_invalid?(lesson)
+    @membership_tier_id < lesson.lesson_tier_id
+  end
+
+  def member_in_class?(lesson)
+    members_booked = lesson.members()
+    member_in_class = []
+    members_booked.each {|member| member_in_class.push(member) if member.id == self.id}
+    return member_in_class.length == 1
   end
 
   def join_name()
