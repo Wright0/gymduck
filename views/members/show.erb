@@ -10,7 +10,6 @@
           </div>
         </div>
 
-
         <div>
           <p class="bold">Name:</p> <p><%= @member.join_name() %></p>
           <p class="bold">Age:</p> <p><%= @member.age %></p>
@@ -24,10 +23,12 @@
         <input type="submit" value="Change member status">
       </form>
     </div>
-
   </div>
 
     <div class="member_profile_lessons">
+      <% if @booked_lessons.length == 0 %>
+      <a href="/lessons">+ Add new lesson</a>
+      <% else %>
       <table>
         <h3>Booked lessons:</h3>
         <tr>
@@ -49,6 +50,7 @@
       </table>
 
       <a href="/lessons">+ Add new lesson</a>
+      <% end %>
     </div>
 
   </main>

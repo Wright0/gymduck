@@ -88,6 +88,12 @@ table.tabledata td {
 
 table.tabledata td.centered {
   text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.icon {
+  font-size: 30px;
 }
 
 table.tabledata p {
