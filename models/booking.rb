@@ -56,7 +56,7 @@ class Booking
     if member.membership_tier_valid?(lesson)
       self.save()
     else
-      return "wrong membership tier"
+      return false
     end
   end
 

@@ -25,7 +25,7 @@ member1 = Member.new({
   'first_name' => 'Shane',
   'last_name' => 'Forster',
   'age' => '28',
-  'membership_tier_id' => membership_tier1.id,
+  'membership_tier_id' => membership_tier2.id,
   'membership_status' => 'active'
   })
 
@@ -33,7 +33,7 @@ member2 = Member.new({
   'first_name' => 'Olivia',
   'last_name' => 'Wright',
   'age' => '27',
-  'membership_tier_id' => membership_tier2.id,
+  'membership_tier_id' => membership_tier1.id,
   'membership_status' => 'active'
   })
 
@@ -49,7 +49,7 @@ member4 = Member.new({
   'first_name' => 'Cody',
   'last_name' => 'Forster',
   'age' => '30',
-  'membership_tier_id' => membership_tier1.id,
+  'membership_tier_id' => membership_tier3.id,
   'membership_status' => 'active'
   })
 
@@ -65,7 +65,7 @@ member6 = Member.new({
   'first_name' => 'Josh',
   'last_name' => 'Forster',
   'age' => '23',
-  'membership_tier_id' => membership_tier3.id,
+  'membership_tier_id' => membership_tier2.id,
   'membership_status' => 'active'
   })
 
@@ -77,11 +77,11 @@ member5.save()
 member6.save()
 
 lesson1 = Lesson.new({
-  'name' => 'Pilates',
+  'name' => 'Spin',
   'lesson_tier_id' => membership_tier1.id,
   'date' => 'Tuesday',
   'time' => '20:00',
-  'capacity' => 5
+  'capacity' => 15
   })
 
 lesson2 = Lesson.new({
@@ -89,12 +89,12 @@ lesson2 = Lesson.new({
   'lesson_tier_id' => membership_tier2.id,
   'date' => 'Wednesday',
   'time' => '18:00',
-  'capacity' => 1
+  'capacity' => 3
   })
 
 lesson3 = Lesson.new({
   'name' => 'Zumba',
-  'lesson_tier_id' => membership_tier3.id,
+  'lesson_tier_id' => membership_tier2.id,
   'date' => 'Wednesday',
   'time' => '11:00',
   'capacity' => 9
@@ -102,7 +102,7 @@ lesson3 = Lesson.new({
 
 lesson4 = Lesson.new({
   'name' => 'Boxing',
-  'lesson_tier_id' => membership_tier1.id,
+  'lesson_tier_id' => membership_tier3.id,
   'date' => 'Monday',
   'time' => '9:00',
   'capacity' => 20
@@ -114,24 +114,34 @@ lesson3.save()
 lesson4.save()
 
 booking1 = Booking.new({
-  'member_id' => member1.id,
+  'member_id' => member2.id,
   'lesson_id' => lesson1.id
   })
 
 booking2 = Booking.new({
-  'member_id' => member2.id,
+  'member_id' => member5.id,
   'lesson_id' => lesson2.id
   })
 
 booking3 = Booking.new({
-  'member_id' => member1.id,
+  'member_id' => member4.id,
   'lesson_id' => lesson2.id
   })
 
-  booking4 = Booking.new({
-    'member_id' => 1,
-    'lesson_id' => 2
-    })
+booking4 = Booking.new({
+  'member_id' => member4.id,
+  'lesson_id' => lesson4.id
+  })
+
+booking5 = Booking.new({
+  'member_id' => member3.id,
+  'lesson_id' => lesson4.id
+  })
+
+booking6 = Booking.new({
+  'member_id' => member1.id,
+  'lesson_id' => lesson3.id
+  })
 
 booking1.save
 booking2.save

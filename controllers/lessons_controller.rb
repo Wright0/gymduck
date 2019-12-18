@@ -30,8 +30,12 @@ end
 
 post '/lessons/:id/booking' do #Adds a member to a booking
   booking = Booking.new(params)
-  booking.complete_booking()
-  erb(:'/lessons/confirmation')
+  result = booking.complete_booking()
+  if result == false
+    erb(:'/lessons/reject')
+  else
+   redirect to '/lessons'
+  end
 end
 
 post '/lessons/:id' do #Saves edits to existing lesson

@@ -5,33 +5,44 @@
 
     <div>
 
-      <p>Lesson: <%= @lesson.name %></p>
-      <p>Date: <%= @lesson.date %></p>
-      <p>Time: <%= @lesson.time %></p>
+      <p class="bold">Lesson:</p> <%= @lesson.name %>
+      <p class="bold">Lesson tier:</p> <%= @lesson.lesson_tier_name() %>
+      <p class="bold">Date and time:</p> <%= @lesson.date %>, <%= @lesson.time %>
 
-      <p>Members booked in class:</p>
+      <p class="bold">Members booked in class:</p>
       <% if @number_booked == 0 %>
         <p>No one is signed up for this class</p>
       <% else %>
-        <ul>
+        <div class="booked-members">
+          <ul class="booked-members">
           <% @members.each do | member | %>
-          <li><%=member.join_name() %> | <a href="/members/<%=member.id%>">Profile</a>
+            <li class="booked-members"><p class="booked-members"><%=member.join_name() %></p><a class="booked-members" href="/members/<%=member.id%>"><i class="far fa-address-card"></i></a>
 
-          <form method="POST" action="/lessons/<%= @lesson.id %>/<%= member.id %>/delete">
-            <input type="submit" value="Remove">
-          </form>
-
-        </li>
+            <form class="booked-members" method="POST" action="/lessons/<%= @lesson.id %>/<%= member.id %>/delete">
+            <button type="submit" value="Remove"><i class="fas fa-trash-alt"></i></button>
+            </form>
+            </li>
           <% end %>
-        </ul>
+          </ul>
+        </div>
       <% end %>
 
       <% if @number_booked >= @lesson.capacity %>
         <p> This class is fully booked</p>
       <% else %>
-        <a href="link">Add member</a>
+        <p class="bold">Add member by ID</p>
+        <form class = "lesson-member-add" method="POST" action="/lessons/<%= @lesson.id %>/booking">
+
+          <label for="member_id">ID:</label>
+          <input type="number" name="member_id" id="member_id">
+
+          <input id="lesson-id" name="lesson_id" type="hidden" value="<%= @lesson.id %>">
+
+          <button type="submit" value="Add member"><i class="fas fa-user-plus"></i></button>
+          </form>
       <% end %>
 
+      <a class="booked-members" href="/lessons"><i class="fas fa-angle-double-left"></i> Lesson page</a>
 
 
     </div>

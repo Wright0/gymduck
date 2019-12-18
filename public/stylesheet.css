@@ -38,27 +38,21 @@ li a.nav {
   color: white;
 }
 
+/* font stuff */
+
+h1 {
+  color: #333;
+}
+
 ul {
   list-style-type: none;
 }
 
-/* li {
-  text-align: left;
-} */
-
 a {
+  color: #50197F;
   text-decoration: none;
   cursor: pointer;
 }
-
-a.icon {
-  /* font-size: 15px; */
-  text-align: center;
-}
-
-
-
-
 
 /* Table data (member list and lesson list) */
 
@@ -75,6 +69,7 @@ table.datalist th {
   border: solid 2px #006C15;
   border-radius: 20px;
   padding: 10px;
+  font-weight: 800;
 }
 
 table.datalist td {
@@ -87,30 +82,83 @@ table.datalist td.centered {
   text-align: center;
 }
 
-
-/* .member_profile {
+.member_profile {
   border: solid 5px orange;
   border-radius: 20px;
   display: flex;
   flex-direction: row;
   padding: 20px;
   background-color: #CAD8DB;
-} */
+}
 
-/* .booking_page {
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* Lesson index and booking pages */
+.booking_page {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 220px;
   padding: 20px;
   background-color: #CAD8DB;
-} */
+  border: solid 5px orange;
+  border-radius: 20px;
+}
 
-/* Top two are the same. Redundant for now. */
+div.booked-members {
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+}
 
- /* .edit_screen_box {
+ul.booked-members {
+  padding: 0px;
+  margin: 0px;
+  padding-inline-start: 6px;
+}
+
+li.booked-members {
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+  padding: 3px;
+}
+
+form.booked-members {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+p.booked-members {
+  margin: 5px;
+}
+
+a.booked-members {
+  margin: 10px;
+}
+
+form.lesson-member-add {
+  margin: 10px;
+  /* padding-inline-start: 10px; */
+}
+
+p.bold {
+  font-weight: bold;
+}
+
+button {
+  cursor: pointer;
+}
+
+ .edit_screen_box {
   margin: 50px;
   padding: 20px;
   min-height: 200px;
-  min-width: 400px;
+  min-width: 370px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,7 +166,11 @@ table.datalist td.centered {
   border: solid 5px orange;
   border-radius: 20px;
   background-color: #CAD8DB;
-} */
+}
+
+.form_item {
+  margin: 18px;
+}
 
 /* div.gym-fact1 {
   margin: 50px;
@@ -142,8 +194,4 @@ table.datalist td.centered {
   border: solid 5px #FFE2A0;
   border-radius: 20px;
   background-color: #FFE2A0;
-} */
-
-/* input[type="submit"] {
-  cursor: pointer;
 } */
