@@ -2,29 +2,34 @@
   <h1>Profile page</h1>
 
   <div class="member_profile">
+      <div class="member-profile-photo-info">
+        <div class="profile-pic">
+          <img src="/images/default-member-icon.png" alt="Member photo icon">
+          <div class="member_profile_center">
+          <a href="/members/<%= @member.id %>/edit"><i class="fas fa-user-edit"></i> Edit</a>
+          </div>
+        </div>
 
-    <div>
-      <img src="/images/default-member-icon.png" alt="Member photo icon">
-    </div>
 
-    <div>
-      <p class="bold">Name: <%= @member.join_name() %></p>
-      <p class="bold">Age: <%= @member.age %></p>
-      <p class="bold">Membership Type: <%= @member.membership_tier_name() %></p>
-      <p class="bold">Membership Status: <%= @member.membership_status %></p>
-    </div>
+        <div>
+          <p class="bold">Name:</p> <p><%= @member.join_name() %></p>
+          <p class="bold">Age:</p> <p><%= @member.age %></p>
+          <p class="bold">Membership Type:</p> <p> <%= @member.membership_tier_name() %></p>
+          <span class="oneline"><p class="bold">Membership Status:</p> <p><%= @member.membership_status %></p></span>
+        </div>
+      </div>
 
-    <div>
-      <a href="/members/<%= @member.id %>/edit"><i class="fas fa-user-edit"></i> Edit</a>
+    <div class = "member-profile-bottom-buttons">
       <form  method="POST" action="/members/<%= @member.id %>/change-status">
         <input type="submit" value="Change member status">
       </form>
-      </div>
-
     </div>
-    <div>
+
+  </div>
+
+    <div class="member_profile_lessons">
       <table>
-        <p>Booked lessons:</p>
+        <h3>Booked lessons:</h3>
         <tr>
           <th>Lesson</th>
           <th>Date</th>
