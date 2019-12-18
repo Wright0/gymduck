@@ -200,7 +200,6 @@ div.profile-pic {
 
 .bold {
   font-weight: bold;
-
 }
 
 button {
@@ -223,4 +222,8 @@ button {
 
 .form_item {
   margin: 18px;
+}
+
+p.reject-request-page{
+  font-size: 18px;
 }
