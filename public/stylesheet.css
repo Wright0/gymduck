@@ -40,6 +40,7 @@ li a.nav {
   padding: 25px 20px;
   text-decoration: none;
   color: white;
+  font-size: 20px;
 }
 
 /* font stuff */
@@ -60,29 +61,35 @@ a {
 /* Table data (member list and lesson list) */
 table.tabledata {
   border: solid 5px orange;
-  border-radius: 20px;
   border-spacing: 0px;
   border-collapse: collapse;
   color: #006C15;
   background-color: #CAD8DB;
 }
 
+table.tabledata tr:hover {
+  background-color: #98b3b9;
+}
+
 table.tabledata th {
   border: solid 2px #006C15;
-  border-radius: 20px;
   padding: 10px;
   font-weight: 800;
 }
 
 table.tabledata td {
   border: solid 2px #006C15;
-  border-radius: 20px;
   padding: 10px;
 }
 
 table.tabledata td.centered {
   text-align: center;
 }
+
+table.tabledata p {
+  margin: 0px;
+}
+
 
 /* The below styles the lesson profile page */
 div.lesson-profile-box {

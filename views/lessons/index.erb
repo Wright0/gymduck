@@ -12,10 +12,10 @@
       </tr>
       <% @lessons.each do | lesson | %>
       <tr>
-        <td><%= lesson.name %></td>
-        <td><%= lesson.lesson_tier_name() %></td>
-        <td><%= lesson.date %></td>
-        <td><%= lesson.time %></td>
+        <td><p class="bold"><%= lesson.name %></p></td>
+        <td><p><%= lesson.lesson_tier_name() %></p></td>
+        <td><p><%= lesson.date %></p></td>
+        <td><p><%= lesson.time %></p></td>
 
         <td><form method="POST" action="/lessons/<%= lesson.id %>/booking">
 
