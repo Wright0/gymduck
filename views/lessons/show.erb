@@ -12,6 +12,8 @@
 
       <p class="bold">Date and time:</p> <%= @lesson.date %>, <%= @lesson.time %>
 
+      <p class="bold">Number of spots booked:</p> <%= @members.length() %>/<%= @lesson.capacity %>
+
       <p class="bold">Members booked in class:</p>
       <% if @number_booked == 0 %>
       <p>No one is signed up for this class</p>
