@@ -16,7 +16,8 @@ end
 post '/members' do #Saving the new member
   @member = Member.new(params)
   @member.save()
-  redirect to '/members'
+  id = @member.id
+  redirect to "/members/#{id}"
 end
 
 get '/members/:id/edit' do #Edit existing member
@@ -33,11 +34,14 @@ end
 
 post '/members/:id/change-status' do #Toggle between active and inactive
   member = Member.find_by_id(params[:id])
-  member.set_membership_status
-  redirect to '/members'
+  member.set_membership_status()
+  id = member.id
+  redirect to "/members/#{id}"
 end
 
 post '/members/:id' do #update member information
-  Member.new( params ).update
-  redirect to '/members'
+  member = Member.new( params )
+  member.update()
+  id = member.id
+  redirect to "/members/#{id}"
 end
