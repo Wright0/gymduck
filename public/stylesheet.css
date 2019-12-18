@@ -172,6 +172,10 @@ button {
   background-color: #CAD8DB;
 }
 
+a .left-link {
+  text-align: left;
+}
+
 .form_item {
   margin: 18px;
 }
