@@ -6,8 +6,7 @@ require_relative( '../models/lesson.rb' )
 require_relative( '../models/booking.rb' )
 also_reload( '../models/*' )
 
-
-post '/lessons/:lessonid/:memberid/delete' do #Delete a member from a lesson in the show page
+post '/lessons/:lessonid/:memberid/delete' do #Delete a member from a lesson in the show page (delete the booking)
   @booking = Booking.find_by_other_ids(params[:lessonid], params[:memberid])
   @booking.delete()
   redirect to '/lessons'
@@ -31,7 +30,7 @@ end
 post '/lessons/:id/booking' do #Adds a member to a booking
   booking = Booking.new(params)
   result = booking.complete_booking()
-  
+
   if result == 'already in lesson'
     erb(:'/lessons/reject-duplicate')
   elsif result == 'wrong tier'

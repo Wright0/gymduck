@@ -1,26 +1,31 @@
 <main>
   <h1>Lesson information</h1>
 
-  <div class="booking_page">
+  <div class="lesson-profile-box">
 
     <div>
 
       <p class="bold">Lesson:</p> <%= @lesson.name %>
+
       <p class="bold">Lesson tier:</p> <%= @lesson.lesson_tier_name() %>
+
       <p class="bold">Date and time:</p> <%= @lesson.date %>, <%= @lesson.time %>
 
       <p class="bold">Members booked in class:</p>
       <% if @number_booked == 0 %>
         <p>No one is signed up for this class</p>
       <% else %>
-        <div class="booked-members">
-          <ul class="booked-members">
+        <div class="lesson-profile">
+          <ul>
           <% @members.each do | member | %>
-            <li class="booked-members"><p class="booked-members"><%=member.join_name() %></p><a class="booked-members" href="/members/<%=member.id%>"><i class="far fa-address-card"></i></a>
+            <li>
+              <p><%=member.join_name() %></p> <a href="/members/<%=member.id%>"><i class="far fa-address-card"></i></a>
 
-            <form class="booked-members" method="POST" action="/lessons/<%= @lesson.id %>/<%= member.id %>/delete">
-            <button type="submit" value="Remove"><i class="fas fa-trash-alt"></i></button>
-            </form>
+                <form method="POST" action="/lessons/<%= @lesson.id %>/<%= member.id %>/delete">
+
+                <button type="submit" value="Remove"><i class="fas fa-trash-alt"></i></button>
+                </form>
+
             </li>
           <% end %>
           </ul>
@@ -42,7 +47,7 @@
           </form>
       <% end %>
 
-      <a class="booked-members" href="/lessons"><i class="fas fa-angle-double-left"></i> Lesson page</a>
+      <a class="lesson-profile" href="/lessons"><i class="fas fa-angle-double-left"></i> Lesson page</a>
 
 
     </div>

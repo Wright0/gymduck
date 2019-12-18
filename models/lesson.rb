@@ -56,8 +56,8 @@ class Lesson
     (
       name,
       lesson_tier_id,
-      lesson_date,
-      lesson_time,
+      date,
+      time,
       capacity
     )  =
     (

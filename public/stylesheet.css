@@ -12,8 +12,12 @@ main {
   align-items: center;
 }
 
+input[type="submit"] {
+  cursor: pointer;
+}
+
 /* Navigation CSS */
-nav{
+nav {
   background-color: #333;
   padding: 0px;
   margin: 0px;
@@ -39,7 +43,6 @@ li a.nav {
 }
 
 /* font stuff */
-
 h1 {
   color: #333;
 }
@@ -55,8 +58,7 @@ a {
 }
 
 /* Table data (member list and lesson list) */
-
-table.datalist {
+table.tabledata {
   border: solid 5px orange;
   border-radius: 20px;
   border-spacing: 0px;
@@ -65,38 +67,25 @@ table.datalist {
   background-color: #CAD8DB;
 }
 
-table.datalist th {
+table.tabledata th {
   border: solid 2px #006C15;
   border-radius: 20px;
   padding: 10px;
   font-weight: 800;
 }
 
-table.datalist td {
+table.tabledata td {
   border: solid 2px #006C15;
   border-radius: 20px;
   padding: 10px;
 }
 
-table.datalist td.centered {
+table.tabledata td.centered {
   text-align: center;
 }
 
-.member_profile {
-  border: solid 5px orange;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: row;
-  padding: 20px;
-  background-color: #CAD8DB;
-}
-
-input[type="submit"] {
-  cursor: pointer;
-}
-
-/* Lesson index and booking pages */
-.booking_page {
+/* The below styles the lesson profile page */
+div.lesson-profile-box {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -108,36 +97,36 @@ input[type="submit"] {
   border-radius: 20px;
 }
 
-div.booked-members {
+div.lesson-profile {
   display: flex;
   padding: 0px;
   margin: 0px;
 }
 
-ul.booked-members {
+div.lesson-profile ul {
   padding: 0px;
   margin: 0px;
   padding-inline-start: 6px;
 }
 
-li.booked-members {
+div.lesson-profile li {
   display: flex;
   flex-direction: row;
   margin: 0px;
   padding: 3px;
 }
 
-form.booked-members {
+div.lesson-profile form{
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
 
-p.booked-members {
+div.lesson-profile p {
   margin: 5px;
 }
 
-a.booked-members {
+div.lesson-profile a {
   margin: 10px;
 }
 
@@ -146,7 +135,7 @@ form.lesson-member-add {
   /* padding-inline-start: 10px; */
 }
 
-p.bold {
+.bold {
   font-weight: bold;
 }
 
@@ -172,26 +161,26 @@ button {
   margin: 18px;
 }
 
-/* div.gym-fact1 {
+.gym-fact{
   margin: 50px;
   padding: 20px;
+  border: solid 5px #222;
+  border-radius: 20px;
+}
+
+.orange-background{
+  background-color: orange;
+}
+
+.green-background{
+  background-color: lightgreen;
+}
+
+.member_profile {
   border: solid 5px orange;
   border-radius: 20px;
-  background-color: orange;
-} */
-
-/* div.gym-fact2 {
-  margin: 50px;
+  display: flex;
+  flex-direction: row;
   padding: 20px;
-  border: solid 5px lightgreen;
-  border-radius: 20px;
-  background-color: lightgreen;
-} */
-
-/* div.gym-fact3 {
-  margin: 50px;
-  padding: 20px;
-  border: solid 5px #FFE2A0;
-  border-radius: 20px;
-  background-color: #FFE2A0;
-} */
+  background-color: #CAD8DB;
+}
