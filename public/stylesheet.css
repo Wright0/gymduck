@@ -1,9 +1,10 @@
 body {
-  background-image: url("images/insung-yoon-dYXMHFb9pJw-unsplash.jpg");
+  background-image: url("images/duck-background2.png");
   background-repeat:no-repeat;
   background-size:cover;
   background-color: #333;
   margin: 0px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 main {
@@ -24,6 +25,8 @@ nav {
 }
 
 ul.nav {
+  display: flex;
+  align-items: center;
   margin: 0px;
   list-style-type: none;
   overflow: hidden;
@@ -45,6 +48,7 @@ li a.nav {
 /* font stuff */
 h1, h2, h3, h4, p {
   color: #333;
+
 }
 
 ul {
@@ -55,11 +59,24 @@ a {
   color: #50197F;
   text-decoration: none;
   cursor: pointer;
+
 }
 
 /* Table data (member list and lesson list) */
+div.table {
+ padding: 30px;
+ min-height: 200px;
+ min-width: 370px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ border: solid 5px orange;
+ border-radius: 20px;
+ background-color: #CAD8DB;
+}
+
 table.tabledata {
-  border: solid 5px orange;
   border-spacing: 0px;
   border-collapse: collapse;
   color: #006C15;
@@ -74,11 +91,13 @@ table.tabledata th {
   border: solid 2px #006C15;
   padding: 10px;
   font-weight: 800;
+
 }
 
 table.tabledata td {
   border: solid 2px #006C15;
   padding: 10px;
+
 }
 
 table.tabledata td.centered {
@@ -87,6 +106,7 @@ table.tabledata td.centered {
 
 table.tabledata p {
   margin: 0px;
+
 }
 
 
@@ -143,6 +163,7 @@ form.lesson-member-add {
 
 .bold {
   font-weight: bold;
+
 }
 
 button {
