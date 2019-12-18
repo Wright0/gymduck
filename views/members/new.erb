@@ -19,8 +19,8 @@
       </div>
 
       <div class ="form_item">
-        <label for="membership-type">Membership_type:</label>
-        <select id="membership-type" name="membership_tier_id">
+        <label for="membership-tier">Membership tier:</label>
+        <select id="membership-tier" name="membership_tier_id">
           <% @membership_tiers.each do | tier | %>
           <option value ="<%= tier.id %>"><%= tier.name %></option>
           <% end %>

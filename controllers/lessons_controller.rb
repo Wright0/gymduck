@@ -31,7 +31,8 @@ end
 post '/lessons/:id/booking' do #Adds a member to a booking
   booking = Booking.new(params)
   result = booking.complete_booking?()
-  id = params[:id]
+  @classid = params[:id]
+  @memberid = booking.member_id
 
   if result == 'already in lesson'
     erb(:'/lessons/reject-duplicate')
@@ -39,13 +40,12 @@ post '/lessons/:id/booking' do #Adds a member to a booking
     erb(:'/lessons/reject-membership')
   else
     booking.save()
-    redirect to "/lessons/#{id}"
+    redirect to "/lessons/#{@classid}"
   end
 end
 
 post '/lessons/:id' do #Saves edits to existing lesson
   Lesson.new( params ).update
-
   redirect to '/lessons'
 end
 

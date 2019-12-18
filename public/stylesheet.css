@@ -18,7 +18,7 @@ input[type="submit"] {
 
 /* Navigation CSS */
 nav {
-  background-color: #333;
+  background-color: #FFA523;
   padding: 0px;
   margin: 0px;
 }
@@ -26,7 +26,6 @@ nav {
 ul.nav {
   margin: 0px;
   list-style-type: none;
-  background-color: #333;
   overflow: hidden;
 }
 
@@ -39,12 +38,12 @@ li a.nav {
   text-align: center;
   padding: 25px 20px;
   text-decoration: none;
-  color: white;
+  color: #333;
   font-size: 20px;
 }
 
 /* font stuff */
-h1 {
+h1, h2, h3, h4, p {
   color: #333;
 }
 

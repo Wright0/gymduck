@@ -18,23 +18,27 @@
       <a href="/members/<%= @member.id %>/edit"><i class="fas fa-user-edit"></i> Edit</a>
       <form  method="POST" action="/members/<%= @member.id %>/change-status">
         <input type="submit" value="Change member status">
-    </div>
+      </div>
 
     </div>
-
-    <table>
-      <p>Booked lessons:</p>
-      <tr>
-        <th>Lesson</th>
-        <th>Date</th>
-        <th>Time</th>
-      </tr>
-      <% @booked_lessons.each do | lesson | %>
+    <div>
+      <table>
+        <p>Booked lessons:</p>
+        <tr>
+          <th>Lesson</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+        <% @booked_lessons.each do | lesson | %>
         <tr>
           <td><%= lesson.name %></td>
           <td><%= lesson.date %></td>
           <td><%= lesson.time %></td>
         </tr>
-      <% end %>
-    </table>
+        <% end %>
+      </table>
+
+      <a href="/lessons">+ Add new lesson</a>
+    </div>
+
   </main>
