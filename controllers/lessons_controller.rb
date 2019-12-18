@@ -9,7 +9,8 @@ also_reload( '../models/*' )
 post '/lessons/:lessonid/:memberid/delete' do #Delete a member from a lesson in the show page (delete the booking)
   @booking = Booking.find_by_other_ids(params[:lessonid], params[:memberid])
   @booking.delete()
-  redirect to '/lessons'
+  id = params[:lessonid]
+  redirect to "/lessons/#{id}"
 end
 
 get '/lessons' do #Page that shows all - Index
@@ -29,19 +30,22 @@ end
 
 post '/lessons/:id/booking' do #Adds a member to a booking
   booking = Booking.new(params)
-  result = booking.complete_booking()
+  result = booking.complete_booking?()
+  id = params[:id]
 
   if result == 'already in lesson'
     erb(:'/lessons/reject-duplicate')
   elsif result == 'wrong tier'
     erb(:'/lessons/reject-membership')
   else
-    redirect to '/lessons'
+    booking.save()
+    redirect to "/lessons/#{id}"
   end
 end
 
 post '/lessons/:id' do #Saves edits to existing lesson
   Lesson.new( params ).update
+
   redirect to '/lessons'
 end
 

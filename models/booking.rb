@@ -49,7 +49,7 @@ class Booking
     Member.map_members(results)
   end
 
-  def complete_booking()
+  def complete_booking?()
     member = Member.find_by_id(@member_id)
     lesson = Lesson.find_by_id(@lesson_id)
 
@@ -58,7 +58,7 @@ class Booking
     elsif member.membership_tier_invalid?(lesson)
       return 'wrong tier'
     else
-      self.save()
+      return 'can be booked'
     end
   end
 
