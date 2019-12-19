@@ -53,7 +53,9 @@ class Booking
     member = Member.find_by_id(@member_id)
     lesson = Lesson.find_by_id(@lesson_id)
 
-    if member.member_in_class?(lesson)
+    if member.membership_status == "Inactive"
+      return 'inactive member'
+    elsif member.member_in_class?(lesson)
       return 'already in lesson'
     elsif member.membership_tier_invalid?(lesson)
       return 'wrong tier'

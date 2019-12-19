@@ -22,10 +22,10 @@ membership_tier2.save()
 membership_tier3.save()
 
 member1 = Member.new({
-  'first_name' => 'Shane',
-  'last_name' => 'Forster',
-  'age' => '28',
-  'membership_tier_id' => membership_tier2.id,
+  'first_name' => 'Sandra',
+  'last_name' => 'Oh',
+  'age' => '34',
+  'membership_tier_id' => membership_tier3.id,
   'membership_status' => 'Active'
   })
 
@@ -38,33 +38,33 @@ member2 = Member.new({
   })
 
 member3 = Member.new({
-  'first_name' => 'Tiffany',
-  'last_name' => 'Forster',
-  'age' => '34',
+  'first_name' => 'Celine',
+  'last_name' => 'Dion',
+  'age' => '51',
   'membership_tier_id' => membership_tier3.id,
-  'membership_status' => 'Inactive'
+  'membership_status' => 'Active'
   })
 
 member4 = Member.new({
-  'first_name' => 'Cody',
-  'last_name' => 'Forster',
-  'age' => '30',
-  'membership_tier_id' => membership_tier3.id,
-  'membership_status' => 'Active'
+  'first_name' => 'Rachel',
+  'last_name' => 'McAdams',
+  'age' => '41',
+  'membership_tier_id' => membership_tier2.id,
+  'membership_status' => 'Inactive'
   })
 
 member5 = Member.new({
-  'first_name' => 'Kate',
-  'last_name' => 'Forster',
-  'age' => '29',
+  'first_name' => 'Ryan',
+  'last_name' => 'Reynolds',
+  'age' => '43',
   'membership_tier_id' => membership_tier2.id,
-  'membership_status' => 'Active'
+  'membership_status' => 'Inactive'
   })
 
 member6 = Member.new({
-  'first_name' => 'Josh',
-  'last_name' => 'Forster',
-  'age' => '23',
+  'first_name' => 'Keanu',
+  'last_name' => 'Reeves',
+  'age' => '55',
   'membership_tier_id' => membership_tier2.id,
   'membership_status' => 'Active'
   })
@@ -113,31 +113,37 @@ lesson2.save()
 lesson3.save()
 lesson4.save()
 
+# Trial lesson - Trial member
 booking1 = Booking.new({
   'member_id' => member2.id,
   'lesson_id' => lesson1.id
   })
 
+# Basic lesson - Basic member
 booking2 = Booking.new({
-  'member_id' => member5.id,
+  'member_id' => member6.id,
   'lesson_id' => lesson2.id
   })
 
+#Basic lesson - Premium member
 booking3 = Booking.new({
-  'member_id' => member4.id,
+  'member_id' => member3.id,
   'lesson_id' => lesson2.id
   })
 
+#Premium lesson - Premium member
 booking4 = Booking.new({
-  'member_id' => member4.id,
+  'member_id' => member1.id,
   'lesson_id' => lesson4.id
   })
 
+#Premium lesson - Premium member
 booking5 = Booking.new({
   'member_id' => member3.id,
   'lesson_id' => lesson4.id
   })
 
+#Basic lesson - Premium member
 booking6 = Booking.new({
   'member_id' => member1.id,
   'lesson_id' => lesson3.id

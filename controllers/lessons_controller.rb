@@ -34,8 +34,10 @@ post '/lessons/:id/booking' do #Adds a member to a booking
   @classid = params[:id]
   @memberid = booking.member_id
 
-  if result == 'already in lesson'
-    erb(:'/lessons/reject-duplicate')
+  if result == 'inactive member'
+    erb(:'/lessons/reject-inactive')
+  elsif result == 'already in lesson'
+  erb(:'/lessons/reject-duplicate')
   elsif result == 'wrong tier'
     erb(:'/lessons/reject-membership')
   else
