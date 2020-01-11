@@ -108,9 +108,7 @@ class Member
 
   def member_in_class?(lesson)
     members_booked = lesson.members()
-    member_in_class = []
-    members_booked.each {|member| member_in_class.push(member) if member.id == self.id}
-    return member_in_class.length == 1
+    return members_booked.find{|member| member.id == self.id} != nil
   end
 
   def join_name()
