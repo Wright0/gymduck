@@ -30,8 +30,8 @@ member1 = Member.new({
   })
 
 member2 = Member.new({
-  'first_name' => 'Olivia',
-  'last_name' => 'Wright',
+  'first_name' => 'Justin',
+  'last_name' => 'Bieber',
   'age' => '27',
   'membership_tier_id' => membership_tier1.id,
   'membership_status' => 'Active'
