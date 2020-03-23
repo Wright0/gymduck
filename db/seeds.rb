@@ -154,5 +154,5 @@ booking2.save
 booking3.save
 booking4.save
 
-binding.pry
-nil
+# binding.pry
+# nil
