@@ -1,7 +1,7 @@
 require( 'sinatra' )
-require( 'sinatra/contrib/all' )
+# require( 'sinatra/contrib/all' )
 require_relative( '../models/member.rb' )
-also_reload( '../models/*' )
+# also_reload( '../models/*' )
 
 
 post '/members/:memberid/:lessonid/delete' do #Delete a member from a lesson from the user page (delete the booking)

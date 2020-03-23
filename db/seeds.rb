@@ -3,7 +3,7 @@ require_relative ('../models/member')
 require_relative ('../models/lesson')
 require_relative ('../models/booking')
 
-require ('pry')
+# require ('pry')
 
 membership_tier1 = MembershipTier.new({
   'name' => 'Trial'
