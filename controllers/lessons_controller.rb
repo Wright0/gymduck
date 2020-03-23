@@ -4,7 +4,7 @@ require( 'sinatra' )
 
 require_relative( '../models/lesson.rb' )
 require_relative( '../models/booking.rb' )
-also_reload( '../models/*' )
+# also_reload( '../models/*' )
 
 post '/lessons/:lessonid/:memberid/delete' do #Delete a member from a lesson in the show page (delete the booking)
   @booking = Booking.find_by_other_ids(params[:lessonid], params[:memberid])
