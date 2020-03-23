@@ -14,3 +14,6 @@ class SqlRunner
   end
 
 end
+
+# To run on local machine, swap out the argument on Line 7 for:
+# {dbname: 'YOUR_DATABASE_NAME', host: 'localhost'}
