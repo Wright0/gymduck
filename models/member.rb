@@ -13,7 +13,7 @@ class Member
     @last_name = options['last_name']
     @age = options['age']
     @membership_tier_id = options['membership_tier_id'].to_i
-    @membership_status = options['membership_status'] || "active"
+    @membership_status = options['membership_status'] || "Active"
   end
 
   def save() #Create
