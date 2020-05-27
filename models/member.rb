@@ -37,7 +37,7 @@ class Member
   end
 
   def self.all() #Read
-    sql = "SELECT * FROM members ORDER BY last_name, first_name ASC "
+    sql = "SELECT * FROM members ORDER BY membership_status, last_name, first_name ASC "
     member_data = SqlRunner.run(sql)
     members = map_members(member_data)
     return members
@@ -47,7 +47,11 @@ class Member
     sql = "SELECT * FROM members WHERE id = $1"
     values = [id]
     member_data = SqlRunner.run(sql, values).first
-    return Member.new(member_data)
+    if member_data == nil
+      return 'member does not exist' 
+    else 
+      return Member.new(member_data)
+    end
   end
 
   def update() #Update

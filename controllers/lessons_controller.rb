@@ -40,6 +40,8 @@ post '/lessons/:id/booking' do #Adds a member to a booking
   erb(:'/lessons/reject-duplicate')
   elsif result == 'wrong tier'
     erb(:'/lessons/reject-membership')
+  elsif result == 'member does not exist'
+    erb(:'/lessons/reject-notfound')
   else
     booking.save()
     redirect to "/lessons/#{@classid}"

@@ -53,7 +53,9 @@ class Booking
     member = Member.find_by_id(@member_id)
     lesson = Lesson.find_by_id(@lesson_id)
 
-    if member.membership_status == "Inactive"
+    if member == 'member does not exist'
+      return 'member does not exist'
+    elsif member.membership_status == "Inactive"
       return 'inactive member'
     elsif member.member_in_class?(lesson)
       return 'already in lesson'
